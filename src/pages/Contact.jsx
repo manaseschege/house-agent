@@ -54,7 +54,10 @@ export default function Contact() {
     { icon: Phone, t: 'Call our hotline', lines: site.phones.map((p) => <a key={p.tel} href={`tel:${p.tel}`} className="block hover:text-forest-700">{p.display}</a>) },
     { icon: WhatsAppIcon, t: 'WhatsApp us', lines: [<a key="w" href={waLink('Hello!')} target="_blank" rel="noreferrer" className="hover:text-forest-700">Chat instantly, 24/7</a>] },
     site.email
-      ? { icon: Mail, t: 'Email', lines: [<a key="e" href={`mailto:${site.email}`} className="break-all hover:text-forest-700">{site.email}</a>] }
+      ? { icon: Mail, t: 'Email & TikTok', lines: [
+          <a key="e" href={`mailto:${site.email}`} className="block break-all hover:text-forest-700">{site.email}</a>,
+          <a key="t" href={site.socials.tiktok} target="_blank" rel="noreferrer" className="block hover:text-forest-700">{site.tiktokHandle}</a>,
+        ] }
       : { icon: TikTokIcon, t: 'Follow us on TikTok', lines: [<a key="t" href={site.socials.tiktok} target="_blank" rel="noreferrer" className="hover:text-forest-700">{site.tiktokHandle}</a>] },
     { icon: Clock, t: 'Opening hours', lines: site.hours.map((h) => <span key={h.days} className="block">{h.days}: {h.time}</span>) },
   ]

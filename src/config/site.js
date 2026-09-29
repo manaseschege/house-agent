@@ -18,8 +18,8 @@ export const site = {
   ],
   // Number used for all WhatsApp buttons (international format, no +)
   whatsapp: '254741046061',
-  // TODO: add the company email; while empty it is hidden across the site
-  email: '',
+  // Leave empty to hide the email everywhere on the site
+  email: 'companyriri@gmail.com',
 
   // Optional: paste a Formspree endpoint (https://formspree.io/f/xxxx) to receive
   // form submissions by email with no backend. Left empty, forms open WhatsApp/email instead.
