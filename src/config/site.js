@@ -4,9 +4,9 @@
 // ─────────────────────────────────────────────────────────────
 
 export const site = {
-  // TODO: replace with the real company name once confirmed
-  name: 'Makazi Properties',
-  shortName: 'Makazi',
+  name: 'RiRi Housing Agency',
+  legalName: 'RiRi Housing Agency Limited',
+  shortName: 'RiRi',
   tagline: 'Property management & real estate you can trust',
   description:
     'We find tenants for vacant houses, sell and market property, collect rent and manage buildings on behalf of landlords across Eldoret, Kitale, Nairobi and Nakuru.',
@@ -18,19 +18,18 @@ export const site = {
   ],
   // Number used for all WhatsApp buttons (international format, no +)
   whatsapp: '254741046061',
-  // TODO: replace with the real company email
-  email: 'info@makaziproperties.co.ke',
+  // TODO: add the company email; while empty it is hidden across the site
+  email: '',
 
   // Optional: paste a Formspree endpoint (https://formspree.io/f/xxxx) to receive
   // form submissions by email with no backend. Left empty, forms open WhatsApp/email instead.
   formEndpoint: '',
 
+  // Add more (e.g. facebook, instagram) here and to the footer when available
   socials: {
-    facebook: 'https://facebook.com/',
-    instagram: 'https://instagram.com/',
-    x: 'https://x.com/',
-    tiktok: 'https://tiktok.com/',
+    tiktok: 'https://www.tiktok.com/@ririhousingagency',
   },
+  tiktokHandle: '@ririhousingagency',
 
   hours: [
     { days: 'Monday – Friday', time: '8:00 AM – 5:00 PM' },

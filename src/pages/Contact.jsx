@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Phone, Mail, Clock, MapPin, Navigation, Check, Building2 } from 'lucide-react'
 import { site, offices } from '../config/site'
 import { mapEmbed, mapLink, submitForm, useOpenStatus, waLink } from '../lib/utils'
-import { PageHero, Reveal, WhatsAppIcon } from '../components/ui'
+import { PageHero, Reveal, WhatsAppIcon, TikTokIcon } from '../components/ui'
 
 export function ContactForm({ subject = 'Website enquiry', topics }) {
   const [state, setState] = useState('idle')
@@ -53,7 +53,9 @@ export default function Contact() {
   const cards = [
     { icon: Phone, t: 'Call our hotline', lines: site.phones.map((p) => <a key={p.tel} href={`tel:${p.tel}`} className="block hover:text-forest-700">{p.display}</a>) },
     { icon: WhatsAppIcon, t: 'WhatsApp us', lines: [<a key="w" href={waLink('Hello!')} target="_blank" rel="noreferrer" className="hover:text-forest-700">Chat instantly, 24/7</a>] },
-    { icon: Mail, t: 'Email', lines: [<a key="e" href={`mailto:${site.email}`} className="break-all hover:text-forest-700">{site.email}</a>] },
+    site.email
+      ? { icon: Mail, t: 'Email', lines: [<a key="e" href={`mailto:${site.email}`} className="break-all hover:text-forest-700">{site.email}</a>] }
+      : { icon: TikTokIcon, t: 'Follow us on TikTok', lines: [<a key="t" href={site.socials.tiktok} target="_blank" rel="noreferrer" className="hover:text-forest-700">{site.tiktokHandle}</a>] },
     { icon: Clock, t: 'Opening hours', lines: site.hours.map((h) => <span key={h.days} className="block">{h.days}: {h.time}</span>) },
   ]
   return (

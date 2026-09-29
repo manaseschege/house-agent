@@ -5,7 +5,7 @@ import { Menu, X, Phone, Mail, Clock, ChevronDown, ArrowUp, MapPin, Send } from 
 import { site, offices } from '../config/site'
 import { services } from '../data/services'
 import { useOpenStatus, waLink } from '../lib/utils'
-import { WhatsAppIcon, FacebookIcon, InstagramIcon, XIcon, TikTokIcon } from './ui'
+import { WhatsAppIcon, TikTokIcon } from './ui'
 
 const nav = [
   { to: '/', label: 'Home' },
@@ -36,7 +36,7 @@ export function Logo({ light }) {
       </span>
       <span className="leading-none">
         <span className={`block font-display text-xl font-semibold ${light ? 'text-white' : 'text-forest-900'}`}>{site.shortName}</span>
-        <span className={`block text-[10px] font-semibold uppercase tracking-[0.3em] ${light ? 'text-gold-400' : 'text-gold-600'}`}>Properties</span>
+        <span className={`block text-[10px] font-semibold uppercase tracking-[0.25em] ${light ? 'text-gold-400' : 'text-gold-600'}`}>Housing Agency</span>
       </span>
     </Link>
   )
@@ -67,7 +67,7 @@ function TopBar() {
           {site.phones.map((p) => (
             <a key={p.tel} href={`tel:${p.tel}`} className="flex items-center gap-2 hover:text-gold-400"><Phone className="h-3.5 w-3.5 text-gold-400" />{p.display}</a>
           ))}
-          <a href={`mailto:${site.email}`} className="hidden items-center gap-2 hover:text-gold-400 lg:flex"><Mail className="h-3.5 w-3.5 text-gold-400" />{site.email}</a>
+          {site.email && <a href={`mailto:${site.email}`} className="hidden items-center gap-2 hover:text-gold-400 lg:flex"><Mail className="h-3.5 w-3.5 text-gold-400" />{site.email}</a>}
         </div>
       </div>
     </div>
@@ -184,9 +184,6 @@ function Navbar() {
 
 function Footer() {
   const socials = [
-    [site.socials.facebook, FacebookIcon, 'Facebook'],
-    [site.socials.instagram, InstagramIcon, 'Instagram'],
-    [site.socials.x, XIcon, 'X'],
     [site.socials.tiktok, TikTokIcon, 'TikTok'],
     [`https://wa.me/${site.whatsapp}`, WhatsAppIcon, 'WhatsApp'],
   ]
@@ -230,13 +227,14 @@ function Footer() {
           </ul>
           <div className="mt-5 space-y-2 text-sm">
             {site.phones.map((p) => <a key={p.tel} href={`tel:${p.tel}`} className="flex items-center gap-2 hover:text-gold-400"><Phone className="h-4 w-4 text-gold-400" />{p.display}</a>)}
-            <a href={`mailto:${site.email}`} className="flex items-center gap-2 break-all hover:text-gold-400"><Mail className="h-4 w-4 shrink-0 text-gold-400" />{site.email}</a>
+            <a href={site.socials.tiktok} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-gold-400"><TikTokIcon className="h-4 w-4 text-gold-400" />{site.tiktokHandle}</a>
+            {site.email && <a href={`mailto:${site.email}`} className="flex items-center gap-2 break-all hover:text-gold-400"><Mail className="h-4 w-4 shrink-0 text-gold-400" />{site.email}</a>}
           </div>
         </div>
       </div>
       <div className="border-t border-white/10">
         <div className="container-x flex flex-col items-center justify-between gap-2 py-6 text-xs sm:flex-row">
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
           <p>Mon–Fri 8:00–5:00 · Sat 8:00–1:00 · Closed Sundays & public holidays</p>
         </div>
       </div>
