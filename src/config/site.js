@@ -4,9 +4,9 @@
 // ─────────────────────────────────────────────────────────────
 
 export const site = {
-  name: 'RiRi Housing Agency',
-  legalName: 'RiRi Housing Agency Limited',
-  shortName: 'RiRi',
+  name: 'RIRI Housing Agency',
+  legalName: 'RIRI Housing Agency Limited',
+  shortName: 'RIRI',
   tagline: 'Property management & real estate you can trust',
   description:
     'We find tenants for vacant houses, sell and market property, collect rent and manage buildings on behalf of landlords across Eldoret, Kitale, Nairobi and Nakuru.',
