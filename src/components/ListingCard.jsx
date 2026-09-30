@@ -6,7 +6,9 @@ import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/counter.css'
 import { MapPin, BedDouble, Building2, Images } from 'lucide-react'
 import { site } from '../config/site'
-import { smallPhoto, listingPrice, listingPlace } from '../data/listings'
+import { listingPrice, listingPlace } from '../data/listings'
+import { lightboxSlide } from '../lib/images'
+import Img from './Img'
 import { waLink } from '../lib/utils'
 import { WhatsAppIcon } from './ui'
 
@@ -28,7 +30,7 @@ export default function ListingCard({ l, index = 0 }) {
       className="group card flex flex-col overflow-hidden transition-shadow duration-500 hover:shadow-lift"
     >
       <button onClick={() => setOpen(0)} className="relative block aspect-[4/3] overflow-hidden text-left" aria-label={`View photos of ${l.name}`}>
-        <img src={smallPhoto(l.photos[0])} alt={l.name} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+        <Img src={l.photos[0]} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" alt={l.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         <span className={`absolute top-4 left-4 rounded-full px-3 py-1 text-xs font-semibold ${l.purpose === 'rent' ? 'bg-white text-forest-800' : 'bg-gold-400 text-forest-950'}`}>
           For {l.purpose === 'rent' ? 'Rent' : 'Sale'}
@@ -45,7 +47,7 @@ export default function ListingCard({ l, index = 0 }) {
         <div className="flex gap-1.5 px-5 pt-4">
           {l.photos.slice(1, 5).map((src, i) => (
             <button key={src} onClick={() => setOpen(i + 1)} className="h-14 flex-1 overflow-hidden rounded-lg" aria-label={`Photo ${i + 2} of ${l.name}`}>
-              <img src={smallPhoto(src)} alt="" loading="lazy" className="h-full w-full object-cover transition hover:scale-110" />
+              <Img src={src} sizes="120px" alt="" className="h-full w-full object-cover transition hover:scale-110" />
             </button>
           ))}
         </div>
@@ -71,7 +73,7 @@ export default function ListingCard({ l, index = 0 }) {
         open={open >= 0}
         index={Math.max(open, 0)}
         close={() => setOpen(-1)}
-        slides={l.photos.map((src) => ({ src, alt: l.name }))}
+        slides={l.photos.map((src) => lightboxSlide(src, l.name))}
         plugins={[Counter]}
         styles={{ container: { backgroundColor: 'rgba(6, 35, 26, .96)' } }}
       />

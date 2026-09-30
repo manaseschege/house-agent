@@ -8,3 +8,8 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
+
+// Keeps photos on the visitor's device after the first visit (production only)
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}))
+}

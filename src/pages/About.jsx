@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
+import Img from '../components/Img'
 import { motion } from 'framer-motion'
 import { Target, Eye, Award, ShieldCheck, Zap, MapPinned, ArrowRight, Users } from 'lucide-react'
-import { site, img, offices } from '../config/site'
+import { site, offices } from '../config/site'
 import { orgChart, timeline, values } from '../data/company'
 import { PageHero, Reveal, SectionHeading } from '../components/ui'
 import { CTA } from './Home'
@@ -94,7 +95,7 @@ export default function About() {
             </Reveal>
           </div>
           <Reveal className="relative">
-            <img src={img('/media/images/1600210492486-724fe5c67fb0.jpg', 1000)} alt="Warm, well-kept living room" className="h-[30rem] w-full rounded-[2rem] object-cover" loading="lazy" />
+            <Img src={'/media/images/1600210492486-724fe5c67fb0.jpg'} sizes="(min-width: 1024px) 45vw, 100vw" alt="Warm, well-kept living room" className="h-[30rem] w-full rounded-[2rem] object-cover" />
           </Reveal>
         </div>
 

@@ -36,6 +36,8 @@
   body { @apply bg-cream text-ink font-sans antialiased; }
   h1, h2, h3 { @apply font-display tracking-tight; text-wrap: balance; }
   ::selection { @apply bg-gold-400 text-forest-950; }
+  /* <picture class="contents"> lets <img> sit directly in grids; its <source> must never take a grid slot */
+  picture > source { display: none; }
   :focus-visible { @apply outline-2 outline-offset-2 outline-gold-500; }
 }
 

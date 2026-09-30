@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
+import Img from '../components/Img'
 import { Home, Search } from 'lucide-react'
-import { img } from '../config/site'
 
 export default function NotFound() {
   return (
     <section className="relative isolate grid min-h-[80vh] place-items-center overflow-hidden bg-forest-950 px-4 pt-32 pb-20 text-center text-white">
-      <img src={img('/media/images/1600566753190-17f0baa2a6c3.jpg', 1600)} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-20" />
+      <Img src={'/media/images/1600566753190-17f0baa2a6c3.jpg'} sizes="100vw" alt="" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-20" />
       <div>
         <p className="font-display text-8xl text-gold-400 sm:text-9xl">404</p>
         <h1 className="mt-4 text-3xl sm:text-4xl">This door doesn’t lead anywhere</h1>

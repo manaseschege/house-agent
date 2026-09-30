@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
+import Img from '../components/Img'
 import { CheckCircle2, ArrowRight } from 'lucide-react'
 import { services } from '../data/services'
-import { img } from '../config/site'
 import { waLink } from '../lib/utils'
 import { PageHero, Reveal, WhatsAppIcon } from '../components/ui'
 import { CTA, FAQ } from './Home'
@@ -30,7 +30,7 @@ export default function Services() {
             <div key={s.id} id={s.id} className="grid scroll-mt-44 items-center gap-10 lg:grid-cols-2 lg:gap-20">
               <Reveal className={`relative ${i % 2 ? 'lg:order-2' : ''}`}>
                 <div className="overflow-hidden rounded-[2rem]">
-                  <img src={img(s.image, 1000)} alt={s.title} loading="lazy" className="h-80 w-full object-cover transition duration-1000 hover:scale-105 sm:h-[26rem]" />
+                  <Img src={s.image} sizes="(min-width: 1024px) 45vw, 100vw" alt={s.title} className="h-80 w-full object-cover transition duration-1000 hover:scale-105 sm:h-[26rem]" />
                 </div>
                 <span className={`absolute -bottom-6 grid h-20 w-20 place-items-center rounded-3xl bg-gold-400 text-forest-950 shadow-lift ${i % 2 ? 'left-6' : 'right-6'}`}>
                   <s.icon className="h-8 w-8" />

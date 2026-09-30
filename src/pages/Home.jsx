@@ -1,15 +1,17 @@
 import { useRef, useState } from 'react'
+import Img from '../components/Img'
+import { optimized } from '../lib/images'
 import { Link, useNavigate } from 'react-router-dom'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import {
   Search, MapPin, Home as HomeIcon, ArrowRight, ShieldCheck, Clock3, Wallet, Building,
   Plus, HandCoins, Phone, CheckCircle2,
 } from 'lucide-react'
-import { site, offices, media, img } from '../config/site'
+import { site, offices, media } from '../config/site'
 import { towns, propertyTypes } from '../data/properties'
 import { services } from '../data/services'
 import { faqs } from '../data/company'
-import { listings, listingPrice, listingPlace, smallPhoto } from '../data/listings'
+import { listings, listingPrice, listingPlace } from '../data/listings'
 import { Reveal, SectionHeading, Counter, WhatsAppIcon } from '../components/ui'
 import { waLink } from '../lib/utils'
 
@@ -37,7 +39,7 @@ function Hero() {
         <video
           className="h-full w-full object-cover"
           src={media.heroVideo}
-          poster={media.heroPoster}
+          poster={optimized(media.heroPoster)}
           autoPlay muted loop playsInline preload="auto"
         />
       </motion.div>
@@ -129,10 +131,10 @@ function Intro() {
       <div className="container-x grid items-center gap-16 lg:grid-cols-2">
         <Reveal className="relative">
           <div className="grid grid-cols-5 gap-4">
-            <img src={img('/media/images/1600607687939-ce8a6c25118c.jpg', 900)} alt="Bright modern living room" className="col-span-3 h-80 w-full rounded-3xl object-cover sm:h-[28rem]" loading="lazy" />
+            <Img src={'/media/images/1600607687939-ce8a6c25118c.jpg'} sizes="(min-width: 1024px) 28vw, 60vw" alt="Bright modern living room" className="col-span-3 h-80 w-full rounded-3xl object-cover sm:h-[28rem]" />
             <div className="col-span-2 flex flex-col gap-4">
-              <img src={img('/media/images/1583608205776-bfd35f0d9f83.jpg', 600)} alt="Family bungalow" className="h-40 w-full rounded-3xl object-cover sm:h-52" loading="lazy" />
-              <img src={img('/media/images/1600566753086-00f18fb6b3ea.jpg', 600)} alt="Bright living room with plants" className="h-36 w-full rounded-3xl object-cover sm:h-52" loading="lazy" />
+              <Img src={'/media/images/1583608205776-bfd35f0d9f83.jpg'} sizes="(min-width: 1024px) 19vw, 40vw" alt="Family bungalow" className="h-40 w-full rounded-3xl object-cover sm:h-52" />
+              <Img src={'/media/images/1600566753086-00f18fb6b3ea.jpg'} sizes="(min-width: 1024px) 19vw, 40vw" alt="Bright living room with plants" className="h-36 w-full rounded-3xl object-cover sm:h-52" />
             </div>
           </div>
           <div className="absolute -bottom-8 left-6 flex items-center gap-4 rounded-2xl bg-white p-4 pr-6 shadow-lift sm:left-10">
@@ -184,7 +186,7 @@ function AvailableNow() {
             <Reveal key={l.id} delay={i * 0.08}>
               <Link to={`/properties?town=${l.town}`} className="group card block overflow-hidden transition-shadow duration-500 hover:shadow-lift">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img src={smallPhoto(l.photos[0])} alt={l.name} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                  <Img src={l.photos[0]} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw" alt={l.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <p className="absolute bottom-4 left-4 right-4 font-display text-xl text-white drop-shadow">{listingPrice(l)}</p>
                 </div>
@@ -223,7 +225,7 @@ function Services() {
           {services.map((s, i) => (
             <Reveal key={s.id} delay={(i % 3) * 0.08}>
               <Link to={`/services#${s.id}`} className="group relative block h-full overflow-hidden rounded-3xl bg-white/5 p-7 ring-1 ring-white/10 transition duration-500 hover:-translate-y-1 hover:bg-white/10">
-                <img src={img(s.image, 600)} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-700 group-hover:scale-105 group-hover:opacity-20" />
+                <Img src={s.image} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw" alt="" className="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-700 group-hover:scale-105 group-hover:opacity-20" />
                 <div className="relative">
                   <div className="flex items-center justify-between">
                     <span className="grid h-14 w-14 place-items-center rounded-2xl bg-gold-400/15 text-gold-400 transition group-hover:bg-gold-400 group-hover:text-forest-950"><s.icon className="h-6 w-6" /></span>
@@ -284,7 +286,7 @@ function VideoBand() {
   ]
   return (
     <section className="relative isolate overflow-hidden py-28 sm:py-40">
-      <video src={media.interiorVideo} poster={media.interiorPoster} className="absolute inset-0 -z-10 h-full w-full object-cover" autoPlay muted loop playsInline preload="none" />
+      <video src={media.interiorVideo} poster={optimized(media.interiorPoster)} className="absolute inset-0 -z-10 h-full w-full object-cover" autoPlay muted loop playsInline preload="none" />
       <div className="absolute inset-0 -z-10 bg-forest-950/75" />
       <div className="container-x text-center text-white">
         <Reveal>
@@ -307,7 +309,7 @@ function VideoBand() {
 const townCount = (town) => listings.filter((l) => l.town === town).length
 const townPhoto = (o) => {
   const first = listings.find((l) => l.town === o.town)
-  return first ? smallPhoto(first.photos[0]) : img(o.image)
+  return first ? first.photos[0] : o.image
 }
 
 function Towns() {
@@ -320,7 +322,7 @@ function Towns() {
             return (
               <Reveal key={o.id} delay={i * 0.08}>
                 <Link to={`/properties?town=${o.town}`} className={`group relative block overflow-hidden rounded-3xl ${i % 2 ? 'h-80 lg:mt-12' : 'h-96'}`}>
-                  <img src={townPhoto(o)} alt={o.town} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+                  <Img src={townPhoto(o)} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" alt={o.town} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/20 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6 text-white">
                     <p className="text-xs font-semibold uppercase tracking-widest text-gold-400">{townCount(o.town) ? `${townCount(o.town)} available now` : 'Houses & property'}</p>

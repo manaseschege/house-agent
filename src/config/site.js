@@ -86,5 +86,3 @@ export const media = {
   interiorPoster: '/media/videos/interior-poster.jpg',
 }
 
-// All photos live in public/media/images, so this just returns the path.
-export const img = (url) => url

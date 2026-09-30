@@ -2,8 +2,8 @@
 //  Available properties shown on the Properties page.
 //
 //  To add a property:
-//   1. Put its photos in public/media/properties/<town>/  (a large
-//      "<name>-1.jpg" plus a small "<name>-1-sm.jpg" for the card)
+//   1. Put its photos in public/media/properties/<town>/ as <name>-1.jpg,
+//      <name>-2.jpg… (smaller WebP copies are made automatically at build)
 //   2. Copy one of the entries below and change the details.
 //
 //  Leave a field as null when it isn't known yet; the site then shows
@@ -63,8 +63,6 @@ export const listings = [
     photos: photos('nakuru', 'cream-block', 3),
   },
 ]
-
-export const smallPhoto = (src) => src.replace(/\.jpg$/, '-sm.jpg')
 
 export function listingPrice(l) {
   if (!l.price) return null

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
-import { img } from '../config/site'
+import Img from './Img'
 
 export const WhatsAppIcon = (p) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
@@ -42,14 +42,14 @@ export function SectionHeading({ eyebrow, title, text, center, light }) {
 export function PageHero({ title, text, image, crumbs = [] }) {
   return (
     <section className="relative isolate overflow-hidden bg-forest-950 pt-40 pb-20 sm:pt-48 sm:pb-28">
-      <motion.img
-        src={img(image, 2000)}
-        alt=""
-        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-45"
+      <motion.div
+        className="absolute inset-0 -z-10 opacity-45"
         initial={{ scale: 1.12 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
-      />
+      >
+        <Img src={image} priority sizes="100vw" className="h-full w-full object-cover" />
+      </motion.div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-forest-950 via-forest-950/60 to-forest-950/30" />
       <div className="container-x">
         <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1 text-sm text-white/70">
