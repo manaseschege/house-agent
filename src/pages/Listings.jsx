@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { RotateCcw, CheckCircle2, Clock3, ShieldCheck, SearchX, ArrowDown } from 'lucide-react'
+import { RotateCcw, CheckCircle2, Clock3, ShieldCheck, ArrowDown } from 'lucide-react'
 import { towns, propertyTypes } from '../data/properties'
 import { listings } from '../data/listings'
 import ListingCard from '../components/ListingCard'
@@ -131,35 +131,29 @@ export default function Listings() {
           </div>
 
           <div className="min-w-0 space-y-10">
-          <section aria-labelledby="available">
-            <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-              <div>
-                <span className="eyebrow">Available now</span>
-                <h2 id="available" className="mt-3 text-3xl text-forest-900">
-                  {results.length} {results.length === 1 ? 'property' : 'properties'}{params.get('town') ? ` in ${params.get('town')}` : ''}
-                </h2>
+          {/* With no matching listings, skip straight to the WhatsApp request form */}
+          {results.length > 0 && (
+            <section aria-labelledby="available">
+              <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <span className="eyebrow">Available now</span>
+                  <h2 id="available" className="mt-3 text-3xl text-forest-900">
+                    {params.get('town') ? `Properties in ${params.get('town')}` : 'Our properties'}
+                  </h2>
+                </div>
+                <a href="#request" className="flex items-center gap-1.5 text-sm font-semibold text-forest-700 hover:text-forest-900">Can’t find it? Send a request <ArrowDown className="h-4 w-4" /></a>
               </div>
-              <a href="#request" className="flex items-center gap-1.5 text-sm font-semibold text-forest-700 hover:text-forest-900">Can’t find it? Send a request <ArrowDown className="h-4 w-4" /></a>
-            </div>
-            {results.length ? (
               <motion.div layout className="grid gap-6 sm:grid-cols-2">
                 <AnimatePresence mode="popLayout">
                   {results.map((l, i) => <ListingCard key={l.id} l={l} index={i} />)}
                 </AnimatePresence>
               </motion.div>
-            ) : (
-              <div className="card grid place-items-center px-6 py-14 text-center">
-                <SearchX className="h-10 w-10 text-gold-500" />
-                <h3 className="mt-4 text-2xl text-forest-900">Nothing listed that matches yet</h3>
-                <p className="mt-2 max-w-md text-muted">We add new houses all the time. Send us your request below and we’ll let you know as soon as something fits.</p>
-                <button onClick={reset} className="btn-outline mt-6">Show all properties</button>
-              </div>
-            )}
-          </section>
+            </section>
+          )}
 
           <Reveal id="request" className="card flex scroll-mt-28 flex-col p-6 sm:p-8">
             <span className="eyebrow">Your request</span>
-            <h2 className="mt-3 text-3xl text-forest-900">Didn’t find what you need?</h2>
+            <h2 className="mt-3 text-3xl text-forest-900">{results.length ? 'Didn’t find what you need?' : 'Tell us what you’re looking for'}</h2>
             <p className="mt-2 text-muted">Send us these details on WhatsApp and our team will get back to you with options. Check the message below, then tap send.</p>
 
             <div className="mt-6 rounded-3xl bg-[#e7ddd3] p-4 sm:p-6">

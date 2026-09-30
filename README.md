@@ -28,7 +28,7 @@ To receive form submissions by email, create a free form at formspree.io and pas
 
 ## Fast-loading photos
 
-Put photos in `public/media/...` as plain JPG or PNG. Before every `npm run dev` / `npm run build` (on Vercel too), `scripts/optimize-images.mjs` makes WebP copies in 4 sizes plus a blurred preview, saved in `public/media/optimized/` and `src/generated/images.json`. Commit those files too, so Vercel can skip photos that haven't changed. In code, show photos with `<Img src="/media/…jpg" sizes="…" />`.
+Property photos go in `public/media/properties/<town>/` as plain JPG or PNG (other site photos are served as-is). Before every `npm run dev` / `npm run build` (on Vercel too), `scripts/optimize-images.mjs` makes WebP copies in 4 sizes plus a blurred preview, saved in `public/media/optimized/` and `src/generated/images.json`. Commit those files too, so Vercel can skip photos that haven't changed. In code, show photos with `<Img src="/media/…jpg" sizes="…" />`.
 
 Caching:
 - `vercel.json` tells browsers and Vercel's CDN to keep the optimized photos for a year. Their file names change whenever a photo changes, so updates are never missed.

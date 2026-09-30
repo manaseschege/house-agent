@@ -1,4 +1,4 @@
-// Generates fast-loading versions of every photo in public/media:
+// Generates fast-loading versions of every property photo in public/media/properties:
 //   • WebP copies in several widths, so each device downloads only the size it needs
 //   • a tiny blurred preview shown instantly while the real photo loads
 // Output file names include a hash of the source photo, so browsers and Vercel's CDN
@@ -31,7 +31,7 @@ const manifest = {}
 const keep = new Set()
 let made = 0
 
-for (const file of walk(MEDIA)) {
+for (const file of walk(join(MEDIA, 'properties'))) {
   const url = '/' + relative(PUBLIC, file).split(sep).join('/')
   const hash = createHash('sha1').update(readFileSync(file)).digest('hex').slice(0, 8)
   const base = relative(MEDIA, file).split(sep).join('/').replace(/\.[^.]+$/, '')

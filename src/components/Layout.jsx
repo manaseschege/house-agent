@@ -328,19 +328,14 @@ function ScrollManager() {
 export default function Layout() {
   const location = useLocation()
   const outlet = useOutlet()
+  // Page fade is plain CSS: it can never leave a page hidden if an animation stalls
   return (
     <>
       <ScrollManager />
       <Navbar />
-      <AnimatePresence mode="wait">
-        <motion.main
-          key={location.pathname}
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Suspense fallback={<div className="min-h-screen bg-forest-950" />}>{outlet}</Suspense>
-        </motion.main>
-      </AnimatePresence>
+      <main key={location.pathname} className="animate-page-in">
+        <Suspense fallback={<div className="min-h-screen bg-forest-950" />}>{outlet}</Suspense>
+      </main>
       <Footer />
       <BackToTop />
       <ChatWidget />
