@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { RotateCcw, CheckCircle2, Clock3, ShieldCheck } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { RotateCcw, CheckCircle2, Clock3, ShieldCheck, SearchX, ArrowDown } from 'lucide-react'
 import { towns, propertyTypes } from '../data/properties'
+import { listings } from '../data/listings'
+import ListingCard from '../components/ListingCard'
 import { site } from '../config/site'
 import { PageHero, Reveal, WhatsAppIcon } from '../components/ui'
 import { compactKES, waLink } from '../lib/utils'
@@ -61,6 +63,18 @@ function Filters({ params, set, reset }) {
   )
 }
 
+// A field left as null in listings.js ("details on request") never rules a property out.
+function matches(l, params) {
+  const purpose = params.get('purpose'), town = params.get('town'), type = params.get('type')
+  const beds = Number(params.get('beds') || 0), max = Number(params.get('max') || 0)
+  const from = Array.isArray(l.price) ? l.price[0] : l.price
+  return (!purpose || l.purpose === purpose) &&
+    (!town || l.town === town) &&
+    (!type || l.type === type) &&
+    (!beds || l.bedrooms == null || l.bedrooms >= beds) &&
+    (!max || from == null || from <= max)
+}
+
 // Turns the chosen filters into the WhatsApp message sent to the office.
 function buildMessage(params, name, notes) {
   const purpose = params.get('purpose')
@@ -96,6 +110,7 @@ export default function Listings() {
   const reset = () => setParams({}, { replace: true })
 
   const message = buildMessage(params, name, notes)
+  const results = useMemo(() => listings.filter((l) => matches(l, params)), [params])
   const purpose = params.get('purpose')
   const heading = purpose === 'rent' ? 'Find a house to rent' : purpose === 'sale' ? 'Find a property to buy' : 'Find your next property'
 
@@ -103,20 +118,49 @@ export default function Listings() {
     <>
       <PageHero
         title={heading}
-        text="Tell us what you’re looking for. We’ll reply on WhatsApp with available houses and properties that match."
-        image="/media/images/1564013799919-ab600027ffc6.jpg"
+        text="Browse our available houses, or tell us what you’re looking for and we’ll reply on WhatsApp with options that match."
+        image="/media/properties/nakuru/pm-flats-1.jpg"
         crumbs={[{ label: 'Properties' }]}
       />
       <section className="py-12 sm:py-16">
         <div className="container-x grid gap-8 lg:grid-cols-[340px_1fr] lg:gap-10">
-          <Reveal className="card h-fit p-6">
-            <Filters params={params} set={set} reset={reset} />
-          </Reveal>
+          <div>
+            <Reveal className="card p-6 lg:sticky lg:top-28">
+              <Filters params={params} set={set} reset={reset} />
+            </Reveal>
+          </div>
 
-          <Reveal delay={0.1} className="card flex flex-col p-6 sm:p-8">
+          <div className="min-w-0 space-y-10">
+          <section aria-labelledby="available">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <span className="eyebrow">Available now</span>
+                <h2 id="available" className="mt-3 text-3xl text-forest-900">
+                  {results.length} {results.length === 1 ? 'property' : 'properties'}{params.get('town') ? ` in ${params.get('town')}` : ''}
+                </h2>
+              </div>
+              <a href="#request" className="flex items-center gap-1.5 text-sm font-semibold text-forest-700 hover:text-forest-900">Can’t find it? Send a request <ArrowDown className="h-4 w-4" /></a>
+            </div>
+            {results.length ? (
+              <motion.div layout className="grid gap-6 sm:grid-cols-2">
+                <AnimatePresence mode="popLayout">
+                  {results.map((l, i) => <ListingCard key={l.id} l={l} index={i} />)}
+                </AnimatePresence>
+              </motion.div>
+            ) : (
+              <div className="card grid place-items-center px-6 py-14 text-center">
+                <SearchX className="h-10 w-10 text-gold-500" />
+                <h3 className="mt-4 text-2xl text-forest-900">Nothing listed that matches yet</h3>
+                <p className="mt-2 max-w-md text-muted">We add new houses all the time. Send us your request below and we’ll let you know as soon as something fits.</p>
+                <button onClick={reset} className="btn-outline mt-6">Show all properties</button>
+              </div>
+            )}
+          </section>
+
+          <Reveal id="request" className="card flex scroll-mt-28 flex-col p-6 sm:p-8">
             <span className="eyebrow">Your request</span>
-            <h2 className="mt-3 text-3xl text-forest-900">Send your details on WhatsApp</h2>
-            <p className="mt-2 text-muted">Check the message below, then tap send. Our team will get back to you with options.</p>
+            <h2 className="mt-3 text-3xl text-forest-900">Didn’t find what you need?</h2>
+            <p className="mt-2 text-muted">Send us these details on WhatsApp and our team will get back to you with options. Check the message below, then tap send.</p>
 
             <div className="mt-6 rounded-3xl bg-[#e7ddd3] p-4 sm:p-6">
               <motion.div
@@ -147,6 +191,7 @@ export default function Listings() {
               ))}
             </ul>
           </Reveal>
+          </div>
         </div>
       </section>
     </>

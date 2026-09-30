@@ -9,6 +9,7 @@ import { site, offices, media, img } from '../config/site'
 import { towns, propertyTypes } from '../data/properties'
 import { services } from '../data/services'
 import { faqs } from '../data/company'
+import { listings, listingPrice, listingPlace, smallPhoto } from '../data/listings'
 import { Reveal, SectionHeading, Counter, WhatsAppIcon } from '../components/ui'
 import { waLink } from '../lib/utils'
 
@@ -167,6 +168,51 @@ function Intro() {
   )
 }
 
+// Latest properties with full details, linking through to the Properties page
+function AvailableNow() {
+  const items = listings.filter((l) => l.price).slice(0, 3)
+  if (!items.length) return null
+  return (
+    <section className="bg-white py-24 sm:py-32">
+      <div className="container-x">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeading eyebrow="Available now" title="Vacant houses ready to move into" />
+          <Link to="/properties" className="btn-outline">See all properties <ArrowRight className="h-4 w-4" /></Link>
+        </div>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((l, i) => (
+            <Reveal key={l.id} delay={i * 0.08}>
+              <Link to={`/properties?town=${l.town}`} className="group card block overflow-hidden transition-shadow duration-500 hover:shadow-lift">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img src={smallPhoto(l.photos[0])} alt={l.name} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <p className="absolute bottom-4 left-4 right-4 font-display text-xl text-white drop-shadow">{listingPrice(l)}</p>
+                </div>
+                <div className="p-5">
+                  <p className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-gold-600"><MapPin className="h-3.5 w-3.5" />{listingPlace(l)}</p>
+                  <h3 className="mt-2 text-2xl text-forest-900">{l.name}</h3>
+                  <p className="mt-1 text-sm text-muted">{l.bedrooms} bedroom {l.type.toLowerCase()} · for {l.purpose}</p>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+          {items.length < 3 && (
+            <Reveal delay={items.length * 0.08}>
+              <Link to="/properties#request" className="group relative flex h-full min-h-72 flex-col justify-end overflow-hidden rounded-3xl bg-forest-800 p-7 text-white">
+                <div className="pointer-events-none absolute -top-16 -right-16 h-56 w-56 rounded-full bg-gold-400/20 blur-3xl" />
+                <Search className="h-9 w-9 text-gold-400" />
+                <h3 className="mt-5 text-2xl">Looking for something else?</h3>
+                <p className="mt-2 text-sm text-white/70">Tell us the town, size and budget. We’ll find you options and reply on WhatsApp.</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold-400">Send a request <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></span>
+              </Link>
+            </Reveal>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Services() {
   return (
     <section className="relative overflow-hidden bg-forest-950 py-24 text-white sm:py-32">
@@ -258,6 +304,12 @@ function VideoBand() {
   )
 }
 
+const townCount = (town) => listings.filter((l) => l.town === town).length
+const townPhoto = (o) => {
+  const first = listings.find((l) => l.town === o.town)
+  return first ? smallPhoto(first.photos[0]) : img(o.image)
+}
+
 function Towns() {
   return (
     <section className="py-24 sm:py-32">
@@ -268,10 +320,10 @@ function Towns() {
             return (
               <Reveal key={o.id} delay={i * 0.08}>
                 <Link to={`/properties?town=${o.town}`} className={`group relative block overflow-hidden rounded-3xl ${i % 2 ? 'h-80 lg:mt-12' : 'h-96'}`}>
-                  <img src={img(o.image, 700)} alt={o.town} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+                  <img src={townPhoto(o)} alt={o.town} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/20 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-gold-400">Houses & property</p>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gold-400">{townCount(o.town) ? `${townCount(o.town)} available now` : 'Houses & property'}</p>
                     <h3 className="mt-1 text-3xl">{o.town}</h3>
                     <p className="mt-1 flex items-center gap-1 text-sm text-white/70 opacity-0 transition group-hover:opacity-100">Explore <ArrowRight className="h-4 w-4" /></p>
                   </div>
@@ -348,6 +400,7 @@ export default function Home() {
       <Hero />
       <Marquee />
       <Intro />
+      <AvailableNow />
       <Services />
       <Steps />
       <VideoBand />
