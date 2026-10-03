@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { RotateCcw, CheckCircle2, Clock3, ShieldCheck, ArrowDown } from 'lucide-react'
 import { towns, propertyTypes } from '../data/properties'
-import { listings } from '../data/listings'
+import { listings, unitsOf, unitFrom } from '../data/listings'
 import ListingCard from '../components/ListingCard'
 import { site } from '../config/site'
 import { PageHero, Reveal, WhatsAppIcon } from '../components/ui'
@@ -67,12 +67,14 @@ function Filters({ params, set, reset }) {
 function matches(l, params) {
   const purpose = params.get('purpose'), town = params.get('town'), type = params.get('type')
   const beds = Number(params.get('beds') || 0), max = Number(params.get('max') || 0)
-  const from = Array.isArray(l.price) ? l.price[0] : l.price
+  const units = unitsOf(l)
   return (!purpose || l.purpose === purpose) &&
     (!town || l.town === town) &&
-    (!type || l.type === type) &&
-    (!beds || l.bedrooms == null || l.bedrooms >= beds) &&
-    (!max || from == null || from <= max)
+    (!type || l.type === type || (type === 'Bedsitter' && units.some((u) => u.bedrooms === 0))) &&
+    // at least one unit type in the building must fit both the size and the budget
+    units.some((u) =>
+      (!beds || u.bedrooms == null || u.bedrooms >= beds) &&
+      (!max || unitFrom(u) == null || unitFrom(u) <= max))
 }
 
 // Turns the chosen filters into the WhatsApp message sent to the office.

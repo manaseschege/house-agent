@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Phone, Mail, Clock, MapPin, Navigation, Check, Building2 } from 'lucide-react'
 import { site, offices } from '../config/site'
 import { mapEmbed, mapLink, submitForm, useOpenStatus, waLink } from '../lib/utils'
-import { PageHero, Reveal, WhatsAppIcon, TikTokIcon } from '../components/ui'
+import { PageHero, Reveal, WhatsAppIcon, TikTokIcon, InstagramIcon } from '../components/ui'
 
 export function ContactForm({ subject = 'Website enquiry', topics }) {
   const [state, setState] = useState('idle')
@@ -50,15 +50,19 @@ export default function Contact() {
   const [active, setActive] = useState(offices[0].id)
   const office = offices.find((o) => o.id === active)
   const status = useOpenStatus()
+  const socialLines = [
+    <a key="t" href={site.socials.tiktok} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-forest-700"><TikTokIcon className="h-3.5 w-3.5" />{site.tiktokHandle}</a>,
+    <a key="i" href={site.socials.instagram} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-forest-700"><InstagramIcon className="h-3.5 w-3.5" />{site.instagramHandle}</a>,
+  ]
   const cards = [
     { icon: Phone, t: 'Call our hotline', lines: site.phones.map((p) => <a key={p.tel} href={`tel:${p.tel}`} className="block hover:text-forest-700">{p.display}</a>) },
     { icon: WhatsAppIcon, t: 'WhatsApp us', lines: [<a key="w" href={waLink('Hello!')} target="_blank" rel="noreferrer" className="hover:text-forest-700">Chat instantly, 24/7</a>] },
     site.email
-      ? { icon: Mail, t: 'Email & TikTok', lines: [
+      ? { icon: Mail, t: 'Email & social media', lines: [
           <a key="e" href={`mailto:${site.email}`} className="block break-all hover:text-forest-700">{site.email}</a>,
-          <a key="t" href={site.socials.tiktok} target="_blank" rel="noreferrer" className="block hover:text-forest-700">{site.tiktokHandle}</a>,
+          ...socialLines,
         ] }
-      : { icon: TikTokIcon, t: 'Follow us on TikTok', lines: [<a key="t" href={site.socials.tiktok} target="_blank" rel="noreferrer" className="hover:text-forest-700">{site.tiktokHandle}</a>] },
+      : { icon: TikTokIcon, t: 'Follow us', lines: socialLines },
     { icon: Clock, t: 'Opening hours', lines: site.hours.map((h) => <span key={h.days} className="block">{h.days}: {h.time}</span>) },
   ]
   return (

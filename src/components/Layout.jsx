@@ -5,7 +5,7 @@ import { Menu, X, Phone, Mail, Clock, ChevronDown, ArrowUp, MapPin, Send } from 
 import { site, offices } from '../config/site'
 import { services } from '../data/services'
 import { useOpenStatus, waLink } from '../lib/utils'
-import { WhatsAppIcon, TikTokIcon } from './ui'
+import { WhatsAppIcon, TikTokIcon, InstagramIcon } from './ui'
 
 const nav = [
   { to: '/', label: 'Home' },
@@ -185,6 +185,7 @@ function Navbar() {
 function Footer() {
   const socials = [
     [site.socials.tiktok, TikTokIcon, 'TikTok'],
+    [site.socials.instagram, InstagramIcon, 'Instagram'],
     [`https://wa.me/${site.whatsapp}`, WhatsAppIcon, 'WhatsApp'],
   ]
   return (
@@ -228,6 +229,7 @@ function Footer() {
           <div className="mt-5 space-y-2 text-sm">
             {site.phones.map((p) => <a key={p.tel} href={`tel:${p.tel}`} className="flex items-center gap-2 hover:text-gold-400"><Phone className="h-4 w-4 text-gold-400" />{p.display}</a>)}
             <a href={site.socials.tiktok} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-gold-400"><TikTokIcon className="h-4 w-4 text-gold-400" />{site.tiktokHandle}</a>
+            <a href={site.socials.instagram} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-gold-400"><InstagramIcon className="h-4 w-4 text-gold-400" />{site.instagramHandle}</a>
             {site.email && <a href={`mailto:${site.email}`} className="flex items-center gap-2 break-all hover:text-gold-400"><Mail className="h-4 w-4 shrink-0 text-gold-400" />{site.email}</a>}
           </div>
         </div>

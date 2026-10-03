@@ -1,4 +1,268 @@
 {
+ "/media/properties/eldoret/pioneer-1br-1.jpg": {
+  "hash": "0544e6e3",
+  "width": 1296,
+  "height": 864,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-1-0544e6e3-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-1-0544e6e3-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-1-0544e6e3-1200.webp",
+    "width": 1200
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-1-0544e6e3-1296.webp",
+    "width": 1296
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAABQBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoLUB6gG8kkRyJzvVvMY8TGMlZqaNgAA7Y9NWbNmwVYCrfpKXxq4vcXsKY9iDCZJrFmT3K1+CR9mniOGBAI194B7zQgJk0NifM05nM2Is96r/7+KSHUyTvJ3B4Dx3iLwZk+0yC81tZ8IHz6Z6Mahi2YYbXeL0P02Fs/EaYNt4nLprFPDIhYlA/04LBhe8gZbl+p8bb9S0CbYp3+akKBsevgbZ934/4Z/Q//+MEhpxe13c6Jl7//s5MnwAAA="
+ },
+ "/media/properties/eldoret/pioneer-1br-2.jpg": {
+  "hash": "5c446b33",
+  "width": 1296,
+  "height": 864,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-2-5c446b33-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-2-5c446b33-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-2-5c446b33-1200.webp",
+    "width": 1200
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-2-5c446b33-1296.webp",
+    "width": 1296
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYwC06CHgR34WUWv4/5Z1dR4AAP7raZ5S2KKAxvMdTPNA/KcjUa75IzbThYB2peKB1bEsRh3A9KLJo8zNYMC8X5wdL8blq/zAMqdjQuJHqrTv3idoPHgaQzAF0eRIeyVshT/cMt3sHSoxtKAAAA=="
+ },
+ "/media/properties/eldoret/pioneer-1br-3.jpg": {
+  "hash": "5103c4ed",
+  "width": 864,
+  "height": 1296,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-3-5103c4ed-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-3-5103c4ed-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-1br-3-5103c4ed-864.webp",
+    "width": 864
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRjwBAABXRUJQVlA4IDABAACwBwCdASoYACQAPu1qqk6ppiOiKqwBMB2JQBXJ7YCQTtl4BfR01TTQZxYIdXx1qemgftEiABg8U2NYh+/QkKqmfbIWP+ggAP6PqjQL+VIvWsXWhKT87Co2KcX6KhOY4zEq9q6iE5Uh4vIsEf+PWOWLlYUXjVwFEq4gq/YTDC9Wloq6n4KSV5KbZSBaee0QcbgLOVnRpAGVRoBlF8CTF5o2E3JxYKLqFrvdE2tn4rn5omL2e7xZgSMNq+1TBfC2bHxs2pfBJLDrCcFVn6EvEur9bHj0xJWTvKQ1xbkl1TrP2UfXUFHfqfwd9sMqyWj8Y/901AaCp4PADJqVZEu/12U9HEetapeW5bKLYqbiT+Q5UKeGQspxCcX3vgg3OIu2pjU8PO9R1QCiToaw+P78AAAA"
+ },
+ "/media/properties/eldoret/pioneer-2br-1.jpg": {
+  "hash": "7af7d65d",
+  "width": 1296,
+  "height": 864,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-1-7af7d65d-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-1-7af7d65d-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-1-7af7d65d-1200.webp",
+    "width": 1200
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-1-7af7d65d-1296.webp",
+    "width": 1296
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAAAwBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoMYJnbG8C4VHbB6HCspD0EtA0hnAAD+36E6HIf7s1MTR57p61ay2OBrPg+1+LHYok8hMq8BrMkoJ8E1Cp4zCZJFDrbQ3v5SySkGSNiGsdtif3alALcg5KCLrBcQvnTfUBroUWqjoIIRLKMdh1aW4QO544VPKySXB5SIWJ1ZHitm+BFIkJWBC0v0+Gg+9F0+D4NZAAAA"
+ },
+ "/media/properties/eldoret/pioneer-2br-2.jpg": {
+  "hash": "d138d35d",
+  "width": 1296,
+  "height": 864,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-2-d138d35d-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-2-d138d35d-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-2-d138d35d-1200.webp",
+    "width": 1200
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-2-d138d35d-1296.webp",
+    "width": 1296
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCdMoADg/Ljy082yid9MNmAAPzyXiM/ppW5jr+Tte8qne3D+H8wIVtQbIABRS7X8Tan8+3gVKGfTLDV3w0cBCik9vXwd0i4TjUqBeZx5lBAEiVi0V9G6zmL3xCwUiwvL+aFwxKt6Mi9vxFusKyj9wvzWbI0BVYt0PaAAAA="
+ },
+ "/media/properties/eldoret/pioneer-2br-3.jpg": {
+  "hash": "2b4e5a93",
+  "width": 1599,
+  "height": 1066,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-3-2b4e5a93-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-3-2b4e5a93-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-3-2b4e5a93-1200.webp",
+    "width": 1200
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/pioneer-2br-3-2b4e5a93-1599.webp",
+    "width": 1599
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZgCdMoAlwBMxA917wIwXmoAA/tOLDALHYpMQGJRRd1L/PZkmD+rEoO3kJURwS10EMjS/aWzWWi3goBL6D8pfFJsQzI5XdpeI4OTv3FuVXghIK8JXLqmS0WJtk08ynvuB31YKYlOBbmihOb2rlSqPKgvwaJbjbrl0ze7TXOqNL4FpnG9H9Qbbh0hnHr3EqXv5HeDoAAA="
+ },
+ "/media/properties/eldoret/uganda-road-2br-1.jpg": {
+  "hash": "e10656e7",
+  "width": 864,
+  "height": 1296,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-2br-1-e10656e7-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-2br-1-e10656e7-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-2br-1-e10656e7-864.webp",
+    "width": 864
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAABQBgCdASoYACQAPu1op08ppiMiKqwBMB2JZAC1COh9UVYARERHacfhHCmv4tXUPfY8asiTgimCGargQAD+xgPCi5XZ0X8YrdjtS99e5p0KLXGEsO6uvy0LD2Ilru7PtMgQvh+NytE3MSUaD37VwxDaj5kM9xBOPztwmsa81Z+Tn78YK53W0+1IMaXjU/cJVCCqg5DQOnNST3DlENfEHLUDAsN2/lH/exYf5EAxBjr7EwGESVBiXHB2DKa3V5ias5/BfJQxnz1nvVdlxObRS8KvRTH3IFk2mTE2DfldTbTyCNY54PKSHJiTD8AAAA=="
+ },
+ "/media/properties/eldoret/uganda-road-2br-2.jpg": {
+  "hash": "069e52db",
+  "width": 864,
+  "height": 1296,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-2br-2-069e52db-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-2br-2-069e52db-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-2br-2-069e52db-864.webp",
+    "width": 864
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRhwBAABXRUJQVlA4IBABAADwBgCdASoYACQAPuFepU2opSOiNVgMARAcCWQAqScy8/AopBEPymcRExUmiRP12q/WTB5Ray39hCpjiWUh1WFAAP7tQ75fXBZbDf7TnFMmQVUKkE/1p4drcRlwXeizPX4CO/M1caVOn+BhMbM/uFzQg2f/RHvZgIJM3kWsaCZoM0+NEus9Yq+5SDkeYsJCDgL/tgKNc7BCUQr05463XtPLLC9cy8/4UuaCCgcQd53Z4NAPC4l1SUuXtwnCe2Y2ELI/wKS2PU6aV7DrppOA7WJKau8k2txt/hIZijP97tBD8G6k4gXFNblY4V2iMEbA2JsrRoyJqT3S76izYVQwsgNDJdxZ5N+mDcBBldnjLaAAAA=="
+ },
+ "/media/properties/eldoret/uganda-road-units-1.jpg": {
+  "hash": "16a63163",
+  "width": 864,
+  "height": 1296,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-1-16a63163-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-1-16a63163-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-1-16a63163-864.webp",
+    "width": 864
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRgQBAABXRUJQVlA4IPgAAACQBgCdASoYACQAPu1wr1MppiQipWmZMB2JQBBhjKpChHjf6YXMnD99cqfXOeTAJBWYMhXLqCZMvYdI+luAAP1ITU9V8NuWu0uBZRl1WcQVeUOrrQRYyOVmWNx6DNqZ3fO25s4MrjMBCjXXpxYnDU/Sfp4QT/NroD0Ju75DFFaMdIQ48P6b5hMxtFW9UA45TXY3eSlWfIu94QTx2Kym/fuhDp+g95+aJeb1NLsFn1UDaF0BYfzqwmmCvEc47fmaCqbaMGsWX/YSnZ2hl0F10eEWdnTkFg4EOe+zaAe74oRq9oggOvmt6goqQUKbaFDg5qHOoYKTlNJgAA=="
+ },
+ "/media/properties/eldoret/uganda-road-units-2.jpg": {
+  "hash": "d3028052",
+  "width": 864,
+  "height": 1296,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-2-d3028052-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-2-d3028052-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-2-d3028052-864.webp",
+    "width": 864
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4IOgAAACwBgCdASoYACQAPu1mrlKppKQiqrgIATAdiWwAyjlBO3ADv4UA+16z1LHdmnVzoBj82tWUB6lCYgyVGo4cAAD+WgISfzwQbhwz9UgCt5YT6/OzJd6NG1RSNETaicAsLnCImy+u0YD8lrOtukQL6wRbLeB7bUKGt1hgHtLjjYYpCWk7iG0OTXSBRMAfdTlewwbEeKbrspsbkb1bevNPCqmo8gb+aaVpVP/3+YMCPFeN5507vrxx8xHlgfuSzIt7OMpFI5ua3rSZeLat68jzxIV7szU1756IRXRxIUno9yJ/cgm8vKAAAAAA"
+ },
+ "/media/properties/eldoret/uganda-road-units-3.jpg": {
+  "hash": "9ed8c88d",
+  "width": 864,
+  "height": 1296,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-3-9ed8c88d-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-3-9ed8c88d-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-3-9ed8c88d-864.webp",
+    "width": 864
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRh4BAABXRUJQVlA4IBIBAADwBQCdASoYACQAPu1oqlAppaOiqqoBMB2JQBbDAUELpWf3B4xVoqPdfiq5pWaXLATGX8Q04Vu0AAD+A0f4I0CSyVafby1MjpgabkNnIOXmP/5FMTc7WlmM737hZ97rxRSqAX3Yh+qjv0xOWpKqhP5zGA9N0j7mzxwqqvolPs1tNvVYNPf0pURL85wSdugWt8I7GLM5MRLpQGvjzv+sPwDRDbrB7uIC+7iyRzE57xROnyBoff8aXhd2JGyyCYYK99qSmMqaKZUniryHxKnQ212hM2lWKcRxZw2SKuINYTZsgw2FfmNa1/GGDReYlMMYL8hD3OLdFkOVIGcy/T0bkx4gWDH8swx80atPV+CVgN/hVgAA"
+ },
+ "/media/properties/eldoret/uganda-road-units-4.jpg": {
+  "hash": "b907c42d",
+  "width": 1599,
+  "height": 1066,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-4-b907c42d-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-4-b907c42d-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-4-b907c42d-1200.webp",
+    "width": 1200
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/uganda-road-units-4-b907c42d-1599.webp",
+    "width": 1599
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBdgO4Abg4GtUyTEA7h4nwAAAPz5mp0XvHbW9GwHjBvImsLQ+X8eK3M9CgJmlVYVlaHZaGBY63fS5wjfA4pbE4b56z+eUq3eC24vkMvuEV1pJ432yl5HwvmCUFhEP+2pihniePiCBwEBQ98JvS06vyTsC+ZPwAzWeBN0s8ixZdZey+9eAA=="
+ },
  "/media/properties/nakuru/cream-block-1.jpg": {
   "hash": "8c747a67",
   "width": 1600,

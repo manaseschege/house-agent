@@ -8,6 +8,9 @@
 //
 //  Leave a field as null when it isn't known yet; the site then shows
 //  "Details on request" and the property still appears in searches.
+//
+//  A building with more than one kind of unit lists them under `units`
+//  instead of `bedrooms` + `price` (bedrooms: 0 means a bedsitter).
 // ─────────────────────────────────────────────────────────────
 
 import { formatKES } from '../lib/utils'
@@ -62,12 +65,81 @@ export const listings = [
     price: null,
     photos: photos('nakuru', 'cream-block', 3),
   },
+
+  // ── Eldoret ────────────────────────────────────────────────
+  {
+    id: 'eldoret-pioneer-1br',
+    name: '1-Bedroom Apartments, Pioneer',
+    town: 'Eldoret',
+    area: 'Pioneer',
+    purpose: 'rent',
+    type: 'Apartment',
+    bedrooms: 1,
+    price: 20000,
+    photos: photos('eldoret', 'pioneer-1br', 3),
+  },
+  {
+    id: 'eldoret-pioneer-2br',
+    name: '2-Bedroom Apartments, Pioneer',
+    town: 'Eldoret',
+    area: 'Pioneer',
+    purpose: 'rent',
+    type: 'Apartment',
+    bedrooms: 2,
+    price: 27500,
+    photos: photos('eldoret', 'pioneer-2br', 3),
+  },
+  {
+    id: 'eldoret-uganda-road-2br',
+    name: '2-Bedroom Apartments, Uganda Road',
+    town: 'Eldoret',
+    area: 'Along Uganda Road',
+    purpose: 'rent',
+    type: 'Apartment',
+    bedrooms: 2,
+    price: 25000,
+    photos: photos('eldoret', 'uganda-road-2br', 2),
+  },
+  {
+    id: 'eldoret-uganda-road-units',
+    name: 'Bedsitters & 1-Bedrooms, Uganda Road',
+    town: 'Eldoret',
+    area: 'Along Uganda Road',
+    purpose: 'rent',
+    type: 'Apartment',
+    units: [
+      { bedrooms: 0, price: 15000 },
+      { bedrooms: 1, price: 25000 },
+    ],
+    photos: photos('eldoret', 'uganda-road-units', 4),
+  },
 ]
 
+// Every listing as a list of unit types, whether it was written with `units` or `bedrooms` + `price`
+export const unitsOf = (l) => l.units ?? [{ bedrooms: l.bedrooms ?? null, price: l.price ?? null }]
+
+export const unitLabel = (u) => (u.bedrooms == null ? null : u.bedrooms === 0 ? 'Bedsitter' : `${u.bedrooms} bedroom`)
+
+// Lowest price of a unit, whether its price is one number or a [from, to] range
+export const unitFrom = (u) => (Array.isArray(u.price) ? u.price[0] : u.price)
+
+const fmt = (n) => formatKES(n)
+
+export const unitPrice = (u) => {
+  if (u.price == null) return null
+  const [from, to] = Array.isArray(u.price) ? u.price : [u.price, u.price]
+  return from === to ? fmt(from) : `${fmt(from)} – ${to.toLocaleString('en-KE')}`
+}
+
+// "1 bedroom", or "Bedsitter & 1 bedroom" for a building with several unit types
+export const listingSizes = (l) => unitsOf(l).map(unitLabel).filter(Boolean).join(' & ') || null
+
+// Price across all of a listing's units, e.g. "KES 15,000 – 25,000 / month"
 export function listingPrice(l) {
-  if (!l.price) return null
-  const [from, to] = Array.isArray(l.price) ? l.price : [l.price, l.price]
-  const range = from === to ? formatKES(from) : `${formatKES(from)} – ${to.toLocaleString('en-KE')}`
+  const all = unitsOf(l).flatMap((u) => (u.price == null ? [] : [].concat(u.price)))
+  if (!all.length) return null
+  const from = Math.min(...all), to = Math.max(...all)
+  const range = from === to ? fmt(from) : `${fmt(from)} – ${to.toLocaleString('en-KE')}`
   return l.purpose === 'rent' ? `${range} / month` : range
 }
 

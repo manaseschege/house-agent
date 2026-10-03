@@ -6,20 +6,21 @@ import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/counter.css'
 import { MapPin, BedDouble, Building2, Images } from 'lucide-react'
 import { site } from '../config/site'
-import { listingPrice, listingPlace } from '../data/listings'
+import { listingPrice, listingPlace, listingSizes, unitsOf, unitLabel, unitPrice } from '../data/listings'
 import { lightboxSlide } from '../lib/images'
 import Img from './Img'
 import { waLink } from '../lib/utils'
 import { WhatsAppIcon } from './ui'
 
 function enquiry(l) {
-  const details = [l.bedrooms && `${l.bedrooms} bedroom`, listingPlace(l), listingPrice(l)].filter(Boolean).join(' · ')
+  const details = [listingSizes(l), listingPlace(l), listingPrice(l)].filter(Boolean).join(' · ')
   return `Hello ${site.name}, I'm interested in ${l.name} (${details}). Is a unit available? I'd like to arrange a viewing.`
 }
 
 export default function ListingCard({ l, index = 0 }) {
   const [open, setOpen] = useState(-1)
   const price = listingPrice(l)
+  const units = unitsOf(l)
   return (
     <motion.article
       layout
@@ -59,7 +60,12 @@ export default function ListingCard({ l, index = 0 }) {
         </p>
         <h3 className="mt-2 font-display text-2xl leading-snug text-forest-900">{l.name}</h3>
         <div className="mt-3 flex flex-wrap gap-2 text-sm text-muted">
-          <span className="flex items-center gap-1.5 rounded-full bg-cream px-3 py-1"><BedDouble className="h-4 w-4 text-forest-600" />{l.bedrooms ? `${l.bedrooms} bedroom` : 'Sizes on request'}</span>
+          {units.map((u) => (
+            <span key={unitLabel(u) ?? 'any'} className="flex items-center gap-1.5 rounded-full bg-cream px-3 py-1">
+              <BedDouble className="h-4 w-4 text-forest-600" />
+              {unitLabel(u) ?? 'Sizes on request'}{units.length > 1 && unitPrice(u) && <b className="font-semibold text-forest-800">· {unitPrice(u)}</b>}
+            </span>
+          ))}
           <span className="flex items-center gap-1.5 rounded-full bg-cream px-3 py-1"><Building2 className="h-4 w-4 text-forest-600" />{l.type}</span>
         </div>
         <div className="mt-auto pt-5">

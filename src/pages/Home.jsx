@@ -11,7 +11,7 @@ import { site, offices, media } from '../config/site'
 import { towns, propertyTypes } from '../data/properties'
 import { services } from '../data/services'
 import { faqs } from '../data/company'
-import { listings, listingPrice, listingPlace } from '../data/listings'
+import { listings, listingPrice, listingPlace, listingSizes } from '../data/listings'
 import { Reveal, SectionHeading, Counter, WhatsAppIcon } from '../components/ui'
 import { waLink } from '../lib/utils'
 
@@ -172,7 +172,10 @@ function Intro() {
 
 // Latest properties with full details, linking through to the Properties page
 function AvailableNow() {
-  const items = listings.filter((l) => l.price).slice(0, 3)
+  // One property from each town first, so every town we cover is represented
+  const priced = listings.filter((l) => listingPrice(l))
+  const firstPerTown = priced.filter((l, i) => priced.findIndex((x) => x.town === l.town) === i)
+  const items = [...firstPerTown, ...priced.filter((l) => !firstPerTown.includes(l))].slice(0, 3)
   if (!items.length) return null
   return (
     <section className="bg-white py-24 sm:py-32">
@@ -193,7 +196,7 @@ function AvailableNow() {
                 <div className="p-5">
                   <p className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-gold-600"><MapPin className="h-3.5 w-3.5" />{listingPlace(l)}</p>
                   <h3 className="mt-2 text-2xl text-forest-900">{l.name}</h3>
-                  <p className="mt-1 text-sm text-muted">{l.bedrooms} bedroom {l.type.toLowerCase()} · for {l.purpose}</p>
+                  <p className="mt-1 text-sm text-muted">{listingSizes(l)} {l.type.toLowerCase()} · for {l.purpose}</p>
                 </div>
               </Link>
             </Reveal>

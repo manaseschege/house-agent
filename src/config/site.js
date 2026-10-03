@@ -25,11 +25,12 @@ export const site = {
   // form submissions by email with no backend. Left empty, forms open WhatsApp/email instead.
   formEndpoint: '',
 
-  // Add more (e.g. facebook, instagram) here and to the footer when available
   socials: {
     tiktok: 'https://www.tiktok.com/@ririhousingagency',
+    instagram: 'https://www.instagram.com/ririhousingagencyltd',
   },
   tiktokHandle: '@ririhousingagency',
+  instagramHandle: '@ririhousingagencyltd',
 
   hours: [
     { days: 'Monday – Friday', time: '8:00 AM – 5:00 PM' },
