@@ -263,6 +263,46 @@
   ],
   "blur": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBdgO4Abg4GtUyTEA7h4nwAAAPz5mp0XvHbW9GwHjBvImsLQ+X8eK3M9CgJmlVYVlaHZaGBY63fS5wjfA4pbE4b56z+eUq3eC24vkMvuEV1pJ432yl5HwvmCUFhEP+2pihniePiCBwEBQ98JvS06vyTsC+ZPwAzWeBN0s8ixZdZey+9eAA=="
  },
+ "/media/properties/eldoret/visa-house-1.jpg": {
+  "hash": "00908940",
+  "width": 1066,
+  "height": 1599,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/visa-house-1-00908940-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/visa-house-1-00908940-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/visa-house-1-00908940-1066.webp",
+    "width": 1066
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRkwBAABXRUJQVlA4IEABAADQBgCdASoYACQAPu1eq02ppKQsMBqqqYAdiWwArDNHQBrQ8VnZNhXge/8jfQ4DRvrbLAx0nUVReqkpyc+gvXQA/sX7lKf7YUt8LkcfJMG41xG4HHFntjrt5Fa3sL0Y8e2Mre/PKnqlUu46NirOnQsrV95Aw+pZQLv5vOpLMEnwnHS5OvYvgWJiKNn+LTxY6AebpHFx4p5BGqTSja3rttDVtU28PicMlNzrSb3T5EyYGaxulwCvSTc6ghgUa8yJwSq55N9SoCwuDGal60BUUBFjUBNssU8/SgkjQMNy7UNGkJ4HtvMl01gmVEQynXn3X9QlZ10JBtlHRWADpE4qIvD1Y/s7h1PAxWORDNaACUb5I1CWmT3Km9QYsnRm1BGrw5LEiZKfBWv73ApqaagsGGqtrmbiAqNJk4/p2PwIAAAAAA=="
+ },
+ "/media/properties/eldoret/visa-house-2.jpg": {
+  "hash": "2f20f142",
+  "width": 1066,
+  "height": 1599,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/eldoret/visa-house-2-2f20f142-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/visa-house-2-2f20f142-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/eldoret/visa-house-2-2f20f142-1066.webp",
+    "width": 1066
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRjABAABXRUJQVlA4ICQBAABQBwCdASoYACQAPu1arE2ppKSiMBqqqTAdiWwAuzMDg4mlf4KXAG8C4qUIk0fJEC598s03muIr5NRA48qyWgttOKzwAP7F+5RUH5RO7gI8p8rwmWNO/DqKKh1qETYYyLDQXDYHurm6hxwa9DdAmSK2KNz3sllUfWq8vO0PJfPon6toUWkDwf/mLP8MVCFBDcMjuVkWX6hVgcHTPiwfkBthzeXd0zmfyweFfG1SxRZ01iay779a/fSNNBliWJpcNYfUoH4GIjLTTXZV9eKOZrMRzsdavP8raibhFx0ZMa5+rEAJ4OVBCxJQTZXDilhI3JiQb6W66eTA3serFNT6xIA9rfV2Oma43PKILHW56JFbwtY995LzDp98Po4WoQra9Zh8usAA"
+ },
  "/media/properties/nakuru/cream-block-1.jpg": {
   "hash": "8c747a67",
   "width": 1600,

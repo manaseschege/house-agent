@@ -113,6 +113,17 @@ export const listings = [
     ],
     photos: photos('eldoret', 'uganda-road-units', 4),
   },
+  {
+    id: 'eldoret-visa-house',
+    name: 'Visa House',
+    town: 'Eldoret',
+    area: 'Town Centre',
+    purpose: 'rent',
+    type: 'Apartment',
+    bedrooms: 2,
+    price: 27500,
+    photos: photos('eldoret', 'visa-house', 2),
+  },
 ]
 
 // Every listing as a list of unit types, whether it was written with `units` or `bedrooms` + `price`
