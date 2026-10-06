@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Img from '../components/Img'
 import { motion } from 'framer-motion'
-import { Target, Eye, Award, ShieldCheck, Zap, MapPinned, ArrowRight, Users } from 'lucide-react'
+import { Target, Eye, Award, ShieldCheck, Zap, MapPinned, ArrowRight } from 'lucide-react'
 import { site, offices } from '../config/site'
 import { orgChart, timeline, values } from '../data/company'
 import { PageHero, Reveal, SectionHeading } from '../components/ui'
@@ -9,18 +9,39 @@ import { CTA } from './Home'
 
 const valueIcons = [ShieldCheck, Zap, Award, MapPinned]
 
-function OrgNode({ node, highlight, delay = 0 }) {
+function Person({ person, large, delay = 0 }) {
   return (
-    <Reveal delay={delay} y={16} className="relative">
-      <div className={`rounded-2xl px-5 py-4 text-center transition duration-300 hover:-translate-y-1 ${highlight ? 'bg-forest-800 text-white shadow-lift' : 'bg-white shadow-soft ring-1 ring-line'}`}>
-        <p className={`font-display text-lg ${highlight ? 'text-gold-400' : 'text-forest-900'}`}>{node.title}</p>
-        <p className={`mt-0.5 text-xs ${highlight ? 'text-white/70' : 'text-muted'}`}>{node.note}</p>
-      </div>
+    <Reveal delay={delay} y={16} className={large ? 'w-44 sm:w-52' : 'w-36 sm:w-40'}>
+      <figure className="group text-center">
+        <div className={`overflow-hidden rounded-3xl bg-forest-50 shadow-soft transition duration-500 group-hover:-translate-y-1 group-hover:shadow-lift ${large ? 'ring-4 ring-gold-400' : 'ring-1 ring-line'}`}>
+          <img
+            src={person.photo}
+            alt={person.name ? `${person.name}, ${person.title}` : person.title}
+            width="640" height="800" loading="lazy" decoding="async"
+            className="aspect-[4/5] w-full object-cover object-top transition duration-700 group-hover:scale-105"
+          />
+        </div>
+        <figcaption className="mt-3">
+          {person.name && <p className="font-display text-lg leading-tight text-forest-900">{person.name}</p>}
+          <p className={person.name ? 'text-xs font-semibold uppercase tracking-wider text-gold-600' : `font-display leading-tight text-forest-900 ${large ? 'text-xl' : 'text-base'}`}>{person.title}</p>
+        </figcaption>
+      </figure>
     </Reveal>
   )
 }
 
-const Connector = () => <div className="mx-auto h-10 w-px bg-gradient-to-b from-gold-500 to-gold-400/30" />
+const Connector = () => <div className="mx-auto my-5 h-10 w-px bg-gradient-to-b from-gold-500 to-gold-400/30" />
+
+function Level({ label, people, delay = 0 }) {
+  return (
+    <div>
+      <p className="mb-5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-gold-600">{label}</p>
+      <div className="flex flex-wrap justify-center gap-x-5 gap-y-7 sm:gap-x-8">
+        {people.map((p, i) => <Person key={p.photo} person={p} delay={delay + i * 0.05} />)}
+      </div>
+    </div>
+  )
+}
 
 function OrgChart() {
   return (
@@ -28,47 +49,20 @@ function OrgChart() {
       <div className="container-x">
         <SectionHeading center eyebrow="Company structure" title="The people behind every property" text="A clear chain of responsibility, from our shareholders to the property managers who look after your building day to day." />
         <div className="mx-auto mt-16 max-w-5xl">
-          <div className="mx-auto max-w-xs space-y-0">
-            <OrgNode node={orgChart.top[0]} />
-            <Connector />
-            <OrgNode node={orgChart.top[1]} highlight delay={0.05} />
-            <Connector />
-          </div>
-          <div className="relative">
-            <div className="absolute top-0 right-[12.5%] left-[12.5%] hidden h-px bg-gold-400/50 md:block" />
-            <div className="grid gap-4 pt-0 sm:grid-cols-2 md:grid-cols-4 md:pt-8">
-              {orgChart.directors.map((n, i) => (
-                <div key={n.title} className="relative">
-                  <div className="absolute -top-8 left-1/2 hidden h-8 w-px bg-gold-400/50 md:block" />
-                  <OrgNode node={n} highlight={n.center} delay={0.1 + i * 0.05} />
-                </div>
-              ))}
-            </div>
-          </div>
+          <Reveal className="mx-auto max-w-xs rounded-2xl bg-forest-800 px-5 py-4 text-center text-white shadow-lift">
+            <p className="font-display text-lg text-gold-400">{orgChart.shareholders.title}</p>
+            <p className="mt-0.5 text-xs text-white/70">{orgChart.shareholders.note}</p>
+          </Reveal>
           <Connector />
-          <div className="relative">
-            <div className="absolute top-0 right-[16.6%] left-[16.6%] hidden h-px bg-gold-400/50 md:block" />
-            <div className="grid gap-4 md:grid-cols-3 md:pt-8">
-              {orgChart.management.map((n, i) => (
-                <div key={n.title} className={`relative ${n.center ? 'md:order-none' : ''}`}>
-                  <div className="absolute -top-8 left-1/2 hidden h-8 w-px bg-gold-400/50 md:block" />
-                  <OrgNode node={n} highlight={n.center} delay={0.3 + i * 0.05} />
-                </div>
-              ))}
-            </div>
-          </div>
+          <div className="flex justify-center"><Person person={orgChart.lead} large /></div>
           <Connector />
-          <div className="mx-auto max-w-sm">
-            <Reveal delay={0.45}>
-              <div className="flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-gold-400 to-gold-500 px-6 py-5 text-forest-950 shadow-lift">
-                <Users className="h-6 w-6" />
-                <div>
-                  <p className="font-display text-lg">{orgChart.field[0].title}</p>
-                  <p className="text-xs text-forest-900/80">{orgChart.field[0].note}</p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
+          <Level label="Directors" people={orgChart.directors} />
+          <Connector />
+          <div className="flex justify-center"><Person person={orgChart.manager} /></div>
+          <Connector />
+          <Level label="Accounts & administration" people={orgChart.office} />
+          <Connector />
+          <Level label="Property managers" people={orgChart.field} />
         </div>
       </div>
     </section>

@@ -1,18 +1,23 @@
-// Company structure, taken from the handwritten brief. Confirm the titles before launch.
+// Company structure shown on the About page. Photos live in public/media/team.
+// Add `name: '...'` to anyone to show their name above their title.
+const photo = (file) => `/media/team/${file}.jpg`
+
 export const orgChart = {
-  top: [{ title: 'Shareholders', note: 'Owners of the company' }, { title: 'Director General', note: 'Overall leadership' }],
+  // TODO: shareholders' photos and details to come from the owner
+  shareholders: { title: 'Shareholders', note: 'Owners of the company' },
+  lead: { title: 'Director General', photo: photo('director-general') },
   directors: [
-    { title: 'Secretary General', note: 'Governance & records' },
-    { title: 'Deputy Director', note: 'Operations oversight', center: true },
-    { title: 'Loans Director', note: 'Loans against rental income' },
-    { title: 'Welfare Director', note: 'Staff & client welfare' },
+    { title: 'Secretary General', photo: photo('secretary-general') },
+    { title: 'Loaning Director', photo: photo('loaning-director') },
+    { title: 'Welfare Director', photo: photo('welfare-director') },
   ],
-  management: [
-    { title: 'Accountant 001', note: 'Landlord accounts' },
-    { title: 'Manager', note: 'Day-to-day operations', center: true },
-    { title: 'Accountant 002', note: 'Rent collection & remittance' },
+  manager: { title: 'Manager', photo: photo('manager') },
+  office: [
+    { title: 'Accountant', photo: photo('accountant-1') },
+    { title: 'Accountant', photo: photo('accountant-2') },
+    { title: 'Secretary', photo: photo('secretary') },
   ],
-  field: [{ title: 'Property Managers', note: 'On the ground in every branch' }],
+  field: [1, 2, 3, 4, 5].map((n) => ({ title: 'Property Manager', photo: photo(`property-manager-${n}`) })),
 }
 
 // TODO: replace with the real company history
