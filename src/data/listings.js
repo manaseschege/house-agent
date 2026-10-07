@@ -124,6 +124,55 @@ export const listings = [
     price: 27500,
     photos: photos('eldoret', 'visa-house', 2),
   },
+
+  // ── Nairobi ────────────────────────────────────────────────
+  {
+    id: 'nairobi-muchatha-2br',
+    name: '2-Bedroom Apartments, Muchatha',
+    town: 'Nairobi',
+    area: 'Muchatha',
+    purpose: 'rent',
+    type: 'Apartment',
+    bedrooms: 2,
+    price: [40000, 45000],
+    photos: photos('nairobi', 'muchatha', 2),
+  },
+  {
+    id: 'nairobi-riara-road-2br',
+    name: '2-Bedroom Apartments, Riara Road',
+    town: 'Nairobi',
+    area: 'Riara Road, Kilimani',
+    purpose: 'rent',
+    type: 'Apartment',
+    bedrooms: 2,
+    price: 90000,
+    photos: photos('nairobi', 'riara-road', 2),
+  },
+  {
+    id: 'nairobi-ngumba',
+    name: '2 & 3-Bedroom Apartments, Ngumba',
+    town: 'Nairobi',
+    area: 'Ngumba',
+    purpose: 'rent',
+    type: 'Apartment',
+    units: [
+      { bedrooms: 2, price: 24500 },
+      { bedrooms: 3, price: 29000 },
+    ],
+    photos: photos('nairobi', 'ngumba', 3),
+  },
+  {
+    // TODO: rent for the shops and stalls still to come from the owner
+    id: 'nairobi-river-road-shops',
+    name: 'Shops & Stalls, River Road',
+    town: 'Nairobi',
+    area: 'River Road',
+    purpose: 'rent',
+    type: 'Commercial',
+    bedrooms: null,
+    price: null,
+    photos: photos('nairobi', 'river-road', 2),
+  },
 ]
 
 // Every listing as a list of unit types, whether it was written with `units` or `bedrooms` + `price`

@@ -9,6 +9,7 @@ export const orgChart = {
   directors: [
     { title: 'Secretary General', photo: photo('secretary-general') },
     { title: 'Loaning Director', photo: photo('loaning-director') },
+    { title: 'Loaning Director', photo: photo('loaning-director-2') },
     { title: 'Welfare Director', photo: photo('welfare-director') },
   ],
   manager: { title: 'Manager', photo: photo('manager') },

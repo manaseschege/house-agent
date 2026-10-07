@@ -60,7 +60,7 @@ export default function ListingCard({ l, index = 0 }) {
         </p>
         <h3 className="mt-2 font-display text-2xl leading-snug text-forest-900">{l.name}</h3>
         <div className="mt-3 flex flex-wrap gap-2 text-sm text-muted">
-          {units.map((u) => (
+          {units.filter((u) => unitLabel(u) || !['Commercial', 'Land'].includes(l.type)).map((u) => (
             <span key={unitLabel(u) ?? 'any'} className="flex items-center gap-1.5 rounded-full bg-cream px-3 py-1">
               <BedDouble className="h-4 w-4 text-forest-600" />
               {unitLabel(u) ?? 'Sizes on request'}{units.length > 1 && unitPrice(u) && <b className="font-semibold text-forest-800">· {unitPrice(u)}</b>}

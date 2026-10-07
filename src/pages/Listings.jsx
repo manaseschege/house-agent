@@ -73,7 +73,8 @@ function matches(l, params) {
     (!type || l.type === type || (type === 'Bedsitter' && units.some((u) => u.bedrooms === 0))) &&
     // at least one unit type in the building must fit both the size and the budget
     units.some((u) =>
-      (!beds || u.bedrooms == null || u.bedrooms >= beds) &&
+      // shops and land have no bedrooms, so a bedroom search leaves them out
+      (!beds || (u.bedrooms == null ? !['Commercial', 'Land'].includes(l.type) : u.bedrooms >= beds)) &&
       (!max || unitFrom(u) == null || unitFrom(u) <= max))
 }
 

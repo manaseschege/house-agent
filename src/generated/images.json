@@ -303,6 +303,194 @@
   ],
   "blur": "data:image/webp;base64,UklGRjABAABXRUJQVlA4ICQBAABQBwCdASoYACQAPu1arE2ppKSiMBqqqTAdiWwAuzMDg4mlf4KXAG8C4qUIk0fJEC598s03muIr5NRA48qyWgttOKzwAP7F+5RUH5RO7gI8p8rwmWNO/DqKKh1qETYYyLDQXDYHurm6hxwa9DdAmSK2KNz3sllUfWq8vO0PJfPon6toUWkDwf/mLP8MVCFBDcMjuVkWX6hVgcHTPiwfkBthzeXd0zmfyweFfG1SxRZ01iay779a/fSNNBliWJpcNYfUoH4GIjLTTXZV9eKOZrMRzsdavP8raibhFx0ZMa5+rEAJ4OVBCxJQTZXDilhI3JiQb6W66eTA3serFNT6xIA9rfV2Oma43PKILHW56JFbwtY995LzDp98Po4WoQra9Zh8usAA"
  },
+ "/media/properties/nairobi/muchatha-1.jpg": {
+  "hash": "92320495",
+  "width": 1600,
+  "height": 1066,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/nairobi/muchatha-1-92320495-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/muchatha-1-92320495-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/muchatha-1-92320495-1200.webp",
+    "width": 1200
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/muchatha-1-92320495-1600.webp",
+    "width": 1600
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQC7AAsm78NR9Pj7xcAA/teZUaxMDgbRFBHR4JvqJaU8kI5ZDeZDagpGnNtPR0othLmGGUpQ5/1sNveyBGqZoEQxTt18Rq/TfmKNvNNcIel8phfMj7sxVpEkG3229LEXnq9SCLmDF4kODX8dx9kqDgcHJTKgxwRZcLi69SAAAA=="
+ },
+ "/media/properties/nairobi/muchatha-2.jpg": {
+  "hash": "c9e2790a",
+  "width": 1600,
+  "height": 1066,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/nairobi/muchatha-2-c9e2790a-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/muchatha-2-c9e2790a-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/muchatha-2-c9e2790a-1200.webp",
+    "width": 1200
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/muchatha-2-c9e2790a-1600.webp",
+    "width": 1600
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQDE2Yx2FDXIovlBJBzAAP7rjrwciGwbxTb3Ua8LH1IoYO8PPgflMeg/3TdKXnU0OnQREHzaR6HNNyCcYiIRt6ZQ/FPRmQ67yirmniFJeAsjqnOGFARNb9rz/t73OLTXyROzUtTcmt5cmugtGQNX5rMVXkj6nW+5k3eKOAA="
+ },
+ "/media/properties/nairobi/ngumba-1.jpg": {
+  "hash": "e3c59a3c",
+  "width": 1066,
+  "height": 1600,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/nairobi/ngumba-1-e3c59a3c-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/ngumba-1-e3c59a3c-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/ngumba-1-e3c59a3c-1066.webp",
+    "width": 1066
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRkoBAABXRUJQVlA4ID4BAACQBwCdASoYACQAPu1wr1CppqQiqqgBMB2JQBTo9KB2zVM0oulbmSCpiWowLihr4IwU51d0cHvVilHowG6bK68ljlileAAAyRgJyWJ3pXOw/iBH2kDwuR1wrzFviu5jlUrtKY4XhORM2vzyrEHH6alOspSXrgXruoYW6NKMUJRrUocsBgWUClPP9FVaeCLIa97ZCLPlPigKbkXGvsJkGywg6mZu0JXk2I8Y2nShljxHq2Y5Dn67joa6wLmJJD+vWdIXH0MXrNRHRBEpGzd7rqK2Pi9x3HRgduVMTPn/ArshMx1suZdMiH4NkqYS0np5UpVPB7lQZZFEi2Fs5lhhchseh6o3z/8FB1YdMBK1hrSpnLMlU2GEp7or8A8qsCcNG2KO0CsF+D/1DxvOEax1LMDtU3Gj4EkxrnN+WqgwAAA="
+ },
+ "/media/properties/nairobi/ngumba-2.jpg": {
+  "hash": "ca98fd25",
+  "width": 1066,
+  "height": 1600,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/nairobi/ngumba-2-ca98fd25-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/ngumba-2-ca98fd25-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/ngumba-2-ca98fd25-1066.webp",
+    "width": 1066
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRlYBAABXRUJQVlA4IEoBAADQBwCdASoYACQAPu1qrFCppaQiqqgBMB2JQBdnMZvABRNTp9wErjb5Ci1QbcHF8AwWN2/3OxAk3mFJxzW8u6oEY5vY9IRSAAD+0zkU8PXA0Hu0uVvmphjkicDqbg78bNLoT5pAr/ZwRx2blkjf+7VO+TK5a5791gCfGVtXWYQFRPTi/bHOSDgAF1UBGQesOYRNMy/Q2cDRT4lZipcdrEsP24DTfeAe6lj39dzKBsfLyIXAO0rhwqJ+daW7kOwBe2SegKCLIFpWZStS8JM0lvX9c2le8O3ZWXfk1QDsUAf83qws9zgMmqZAqUpxAY4IQJikfLiDCOHvLupH/1DHpvcf7qtH1mH1Sq0jZEwydcpxBHgZ894y4XUA9jIRwkCdK2tfB8hlRc8CS5p7nOStPar39DTCbbMhbHD6urq4eJYtuB68VTMQBlD3YAA="
+ },
+ "/media/properties/nairobi/ngumba-3.jpg": {
+  "hash": "f0fc67b4",
+  "width": 1066,
+  "height": 1600,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/nairobi/ngumba-3-f0fc67b4-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/ngumba-3-f0fc67b4-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/ngumba-3-f0fc67b4-1066.webp",
+    "width": 1066
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRjoBAABXRUJQVlA4IC4BAACQBgCdASoYACQAPu1sqVAppiOiqqoBMB2JZACqbf/qW/ZoDhROVUmPsM/PCUlVZq2fbDkM5NFt0VdmSdpgAMlsO46VPN08BHQ3VvMXNEMTkpK73nJnrYjOjZTkM49hdBZWRf3XIhR/NrD1nORccinj2vKTxZBGZoTObmTaxwCNI+KQYruPYVwac3KxSkBRw5JXuPAaDuJJCwrfBWVUg/z/CHYOpZF3gJaYCb7ITuEmn1zooGOgy6pdkM2s4csZC1a6HalZOWgm4+DscvK9ey0qf7b5w9vN4AFg6iVGNjs0iK4z+CF4hzkt1TYq8lpsct23zed7TIM3TYeOIWv47zYitAV/KJU3QkCkBjti+bJJbl4V60GwbWxtc3D2JKnYa+g5s1IAfknIl04leAAAAA=="
+ },
+ "/media/properties/nairobi/riara-road-1.jpg": {
+  "hash": "55c24f9e",
+  "width": 896,
+  "height": 1200,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/nairobi/riara-road-1-55c24f9e-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/riara-road-1-55c24f9e-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/riara-road-1-55c24f9e-896.webp",
+    "width": 896
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAACQBQCdASoYACAAPu1kqk2ppaQiMAgBMB2JQBWAZhEgniuzAYelS/Dh+Q22A3djZWEuL01TwAD+CEs59MVKRr4CH9riVpJTGrbbgE1MwPQu5fUX5O/e55uZNo6dRCuzyMHYJT+rKs0A4P3bh5O93LROq3BB9YX2/MXgxIBTRmG+puInt6H74XKVcKoVuaaQ2JQ40BzbrPFTnZ0st+S0seOH4qIqBM0TVMf/1bGvYlUd/Y/j/kj+zOqTJair3CdsbnhKZ0uEUz0ZOAT9R/TcKIX3d6DM9DdtxhhiCRRWay3sLhQAAAA="
+ },
+ "/media/properties/nairobi/riara-road-2.jpg": {
+  "hash": "fc043dc5",
+  "width": 896,
+  "height": 1200,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/nairobi/riara-road-2-fc043dc5-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/riara-road-2-fc043dc5-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/riara-road-2-fc043dc5-896.webp",
+    "width": 896
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAACwBQCdASoYACAAPu1mqU2ppaQiMAgBMB2JYgCsM0xB/IQyE1UnmRvrGSRaBdMwMwAgcfVaOYAA/mmnpjQlN+dOlUEdUumPV8LzA5dwHxfkmCFCnBrYojYu3+xJSC5FJcTWWdggUOu6t8mjAL7b2oLxnkDizW6YjTvrs4ZMeZxJ9r5b2ASFbiIaTUfOAlj43rg8Oy2Cy6k302N47oj4xqkLMrpjR6OSvwUtKApVTxPjk37BGRi+p71DISGS5M6bwb5qEhYvtXk66SPp6j5txwByfPhb1TH1hzn/G4C2HIdEiFtQBPgGAA=="
+ },
+ "/media/properties/nairobi/river-road-1.jpg": {
+  "hash": "ab5f6224",
+  "width": 1066,
+  "height": 1600,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/nairobi/river-road-1-ab5f6224-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/river-road-1-ab5f6224-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/river-road-1-ab5f6224-1066.webp",
+    "width": 1066
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRi4BAABXRUJQVlA4ICIBAAAQCACdASoYACQAPu1uqlEppiOiqrgKATAdiUAXmsM2QL388gPClLE00D/5RyASZe9CDWOQt5C5PoSW1Ow9k9PFJ0TFlJdVeU4AAP7nbR0vDExUU2y62tksmud6DWfxkjhcadkv/Lu58xG3nkjPv5M5x/8DCP1Nz/4b9eYt2Fbyc9Ay05r3Mhc3mtL9hOlamSStAPEOMpNePebth6m3XxOUG6e16jMWCW/Eoj++UGagKGRq2Mx3RJKq5IC7dzCzQaK38swraPkgTQvc8OIXLzEFXNQrvwQ+uE0AQEzMrCIUR7tJXUh00L92fBPCQTRO0KHUFo2LdubiTXxXTlugVIiprF+hTn89em/6wSzPc/X4qb45mMngLR59N9Kt53MH+gAAAA=="
+ },
+ "/media/properties/nairobi/river-road-2.jpg": {
+  "hash": "51b7d1bf",
+  "width": 1066,
+  "height": 1600,
+  "srcset": [
+   {
+    "src": "/media/optimized/properties/nairobi/river-road-2-51b7d1bf-480.webp",
+    "width": 480
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/river-road-2-51b7d1bf-800.webp",
+    "width": 800
+   },
+   {
+    "src": "/media/optimized/properties/nairobi/river-road-2-51b7d1bf-1066.webp",
+    "width": 1066
+   }
+  ],
+  "blur": "data:image/webp;base64,UklGRhABAABXRUJQVlA4IAQBAACQBgCdASoYACQAPu1qqE8ppiOiKqwBMB2JYwDE2BAXLPyleF7/Er+Jh2yt9k6upYgHCX5ozVW+8x3UnPsAAP7v8fMaisNFRDY4x8x5t7wOHiFLOjAKok5AiNAby3R2FSpT7HUmDMVAKYkRmhGU0d9mAt+5R4HrnQoq5yk8B4rCgIgq10Nfme3z5MKzlaRzJ7vQEQaMvtTFYOqYG6bGmoviuB6xxF/sLg3ANQbuhmkfwP7V5u0UrjqDjzAwzm2C0KrGJ4+nRSE6YdrWoB7aa1fncreB4tnOk4v+/vBuHZc6l5aDe/XNuI7F8xg2LZMXkyHj81+gD/656DTvCTgDgzCvzNuAAA=="
+ },
  "/media/properties/nakuru/cream-block-1.jpg": {
   "hash": "8c747a67",
   "width": 1600,
