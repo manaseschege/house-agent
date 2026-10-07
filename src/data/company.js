@@ -16,7 +16,7 @@ export const orgChart = {
   office: [
     { title: 'Accountant', photo: photo('accountant-1') },
     { title: 'Accountant', photo: photo('accountant-2') },
-    { title: 'Secretary', photo: photo('secretary') },
+    { title: 'Accountant', photo: photo('accountant-3') },
   ],
   field: [1, 2, 3, 4, 5].map((n) => ({ title: 'Property Manager', photo: photo(`property-manager-${n}`) })),
 }

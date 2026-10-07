@@ -60,7 +60,7 @@ function OrgChart() {
           <Connector />
           <div className="flex justify-center"><Person person={orgChart.manager} /></div>
           <Connector />
-          <Level label="Accounts & administration" people={orgChart.office} />
+          <Level label="Accountants" people={orgChart.office} />
           <Connector />
           <Level label="Property managers" people={orgChart.field} />
         </div>
