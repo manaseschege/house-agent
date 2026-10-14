@@ -71,11 +71,10 @@ export const offices = [
   {
     id: 'kitale',
     town: 'Kitale',
-    // TODO: confirm the Kitale building and room number
-    building: 'Kitale Office',
+    building: 'Nyayo Market',
     street: 'Kitale Town',
-    floor: 'Call us for directions',
-    mapQuery: 'Kitale, Kenya',
+    floor: '2nd Floor, Room 128',
+    mapQuery: 'Nyayo Market, Kitale, Kenya',
     image: '/media/images/1558036117-15d82a90b9b1.jpg',
   },
 ]
