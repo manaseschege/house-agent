@@ -29,12 +29,21 @@ export const timeline = [
   { year: 'Today', title: 'Kitale & rental loans', text: 'We now serve the North Rift from Kitale and offer landlords loans against their rental income.' },
 ]
 
-export const values = [
-  { title: 'Honest & Transparent', text: 'Every shilling we collect is accounted for in your monthly statement.' },
-  { title: 'Responsive', text: 'Tenant issues are handled quickly and reported back to you.' },
-  { title: 'Results-Driven', text: 'Fewer empty units, fair rent and on-time payments.' },
-  { title: 'Local Expertise', text: 'Four offices and teams who know each neighbourhood.' },
+// Mission, vision and core values, from the company's own statement (scanned, Oct 2026)
+export const mission = [
+  'To provide the highest level of service and satisfaction to landlords and tenants through orderly and good management of the properties entrusted to us.',
+  'To bridge the market gap in Kenya’s real estate management between landlords and tenants, and between global investors and local developers.',
 ]
+
+export const vision = [
+  'To make real estate management transparent and profitable for all parties through honesty, competence, trustworthiness and the detailed information that has been lacking in the market.',
+  'To pioneer change in real estate management by identifying emerging opportunities not yet utilised.',
+]
+
+export const coreValues = {
+  summary: 'Respecting people, promoting diversity, inclusion and professional growth in all areas.',
+  items: ['Respecting people', 'Promoting diversity', 'Inclusion', 'Professional growth in all areas'],
+}
 
 export const faqs = [
   { q: 'How much do you charge to manage my property?', a: 'Our fee is a small percentage of the rent we collect, agreed with you upfront. Call or WhatsApp us for a quote on your building.' },

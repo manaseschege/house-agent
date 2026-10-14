@@ -13,6 +13,7 @@ const nav = [
     to: '/about', label: 'About',
     children: [
       { to: '/about', label: 'Our Story' },
+      { to: '/about#mission', label: 'Mission, Vision & Values' },
       { to: '/about#structure', label: 'Company Structure' },
       { to: '/contact#offices', label: 'Our Offices' },
     ],

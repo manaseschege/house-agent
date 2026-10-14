@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import Img from '../components/Img'
 import { motion } from 'framer-motion'
-import { Target, Eye, Award, ShieldCheck, Zap, MapPinned, ArrowRight } from 'lucide-react'
+import { Target, Eye, ArrowRight, HeartHandshake, Globe2, Handshake, TrendingUp } from 'lucide-react'
 import { site, offices } from '../config/site'
-import { orgChart, timeline, values } from '../data/company'
+import { orgChart, timeline, mission, vision, coreValues } from '../data/company'
 import { PageHero, Reveal, SectionHeading } from '../components/ui'
 import { CTA } from './Home'
 
-const valueIcons = [ShieldCheck, Zap, Award, MapPinned]
+const valueIcons = [HeartHandshake, Globe2, Handshake, TrendingUp]
 
 function Person({ person, large, delay = 0 }) {
   return (
@@ -93,30 +93,40 @@ export default function About() {
           </Reveal>
         </div>
 
-        <div className="container-x mt-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map((v, i) => {
-            const Icon = valueIcons[i]
-            return (
-              <Reveal key={v.title} delay={i * 0.08} className="card group p-7 transition duration-500 hover:-translate-y-1 hover:shadow-lift">
-                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-forest-50 text-forest-700 transition group-hover:bg-forest-800 group-hover:text-gold-400"><Icon className="h-6 w-6" /></span>
-                <h3 className="mt-5 text-xl text-forest-900">{v.title}</h3>
-                <p className="mt-2 text-sm text-muted">{v.text}</p>
-              </Reveal>
-            )
-          })}
+        <div id="values" className="container-x mt-24 scroll-mt-28">
+          <SectionHeading center eyebrow="Our core values" title="What guides everything we do" text={coreValues.summary} />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {coreValues.items.map((v, i) => {
+              const Icon = valueIcons[i]
+              return (
+                <Reveal key={v} delay={i * 0.08} className="card group flex flex-col items-center p-7 text-center transition duration-500 hover:-translate-y-1 hover:shadow-lift">
+                  <span className="grid h-14 w-14 place-items-center rounded-2xl bg-forest-50 text-forest-700 transition group-hover:bg-forest-800 group-hover:text-gold-400"><Icon className="h-6 w-6" /></span>
+                  <h3 className="mt-5 text-xl text-forest-900">{v}</h3>
+                </Reveal>
+              )
+            })}
+          </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-forest-950 py-24 text-white sm:py-32">
-        <div className="container-x grid gap-6 md:grid-cols-2">
+      <section id="mission" className="relative scroll-mt-24 overflow-hidden bg-forest-950 py-24 text-white sm:py-32">
+        <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-gold-400/10 blur-3xl" />
+        <div className="container-x relative grid gap-6 md:grid-cols-2">
           {[
-            [Target, 'Our mission', 'To give every landlord reliable income and every tenant a home they are proud of, through honest, professional property services.'],
-            [Eye, 'Our vision', 'To be the most trusted property management and real estate partner in Kenya, known for transparency and results.'],
-          ].map(([Icon, t, d], i) => (
-            <Reveal key={t} delay={i * 0.1} className="rounded-3xl bg-white/5 p-10 ring-1 ring-white/10">
+            [Target, 'Our mission', mission],
+            [Eye, 'Our vision', vision],
+          ].map(([Icon, t, points], i) => (
+            <Reveal key={t} delay={i * 0.1} className="rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 sm:p-10">
               <Icon className="h-10 w-10 text-gold-400" />
               <h3 className="mt-6 text-3xl">{t}</h3>
-              <p className="mt-4 text-lg leading-relaxed text-white/70">{d}</p>
+              <ul className="mt-5 space-y-4">
+                {points.map((p) => (
+                  <li key={p} className="flex gap-3 text-lg leading-relaxed text-white/75">
+                    <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-400" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           ))}
         </div>
