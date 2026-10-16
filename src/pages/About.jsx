@@ -54,8 +54,6 @@ function OrgChart() {
             <p className="mt-0.5 text-xs text-white/70">{orgChart.shareholders.note}</p>
           </Reveal>
           <Connector />
-          <div className="flex justify-center"><Person person={orgChart.lead} large /></div>
-          <Connector />
           <Level label="Directors" people={orgChart.directors} />
           <Connector />
           <div className="flex justify-center"><Person person={orgChart.manager} /></div>

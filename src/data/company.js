@@ -5,13 +5,9 @@ const photo = (file) => `/media/team/${file}.jpg`
 export const orgChart = {
   // TODO: shareholders' photos and details to come from the owner
   shareholders: { title: 'Shareholders', note: 'Owners of the company' },
-  lead: { title: 'Director General', photo: photo('director-general') },
-  directors: [
-    { title: 'Secretary General', photo: photo('secretary-general') },
-    { title: 'Loaning Director', photo: photo('loaning-director') },
-    { title: 'Loaning Director', photo: photo('loaning-director-2') },
-    { title: 'Welfare Director', photo: photo('welfare-director') },
-  ],
+  // All directors sit in one row, each shown simply as "Director"
+  directors: ['director-general', 'secretary-general', 'loaning-director', 'loaning-director-2', 'welfare-director']
+    .map((file) => ({ title: 'Director', photo: photo(file) })),
   manager: { title: 'Manager', photo: photo('manager') },
   office: [
     { title: 'Accountant', photo: photo('accountant-1') },
