@@ -6,6 +6,7 @@ import { site, offices } from '../config/site'
 import { services } from '../data/services'
 import { useOpenStatus, waLink } from '../lib/utils'
 import { WhatsAppIcon, TikTokIcon, InstagramIcon } from './ui'
+import AiAssistant from './AiAssistant'
 
 const nav = [
   { to: '/', label: 'Home' },
@@ -342,6 +343,7 @@ export default function Layout() {
       <Footer />
       <BackToTop />
       <ChatWidget />
+      <AiAssistant />
     </>
   )
 }

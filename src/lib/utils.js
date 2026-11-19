@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { site } from '../config/site'
+import { site } from '../config/site.js'
 
 export const formatKES = (n) => 'KES ' + Math.round(n).toLocaleString('en-KE')
 

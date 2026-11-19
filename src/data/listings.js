@@ -13,7 +13,7 @@
 //  instead of `bedrooms` + `price` (bedrooms: 0 means a bedsitter).
 // ─────────────────────────────────────────────────────────────
 
-import { formatKES } from '../lib/utils'
+import { formatKES } from '../lib/utils.js'
 
 const photos = (town, name, count) =>
   Array.from({ length: count }, (_, i) => `/media/properties/${town}/${name}-${i + 1}.jpg`)
