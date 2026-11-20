@@ -7,6 +7,7 @@ import { services } from '../data/services'
 import { useOpenStatus, waLink } from '../lib/utils'
 import { WhatsAppIcon, TikTokIcon, InstagramIcon } from './ui'
 import AiAssistant from './AiAssistant'
+import BrandMark, { BRAND } from './BrandMark'
 
 const nav = [
   { to: '/', label: 'Home' },
@@ -33,12 +34,15 @@ const nav = [
 export function Logo({ light }) {
   return (
     <Link to="/" className="flex items-center gap-2.5" aria-label={`${site.name} home`}>
-      <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 shadow-soft">
-        <svg viewBox="0 0 24 24" className="h-5 w-5 text-forest-950" fill="currentColor"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" /></svg>
+      <span className="grid h-11 w-11 place-items-center rounded-xl bg-white shadow-soft ring-1 ring-black/5">
+        <BrandMark className="h-9 w-9" />
       </span>
       <span className="leading-none">
-        <span className={`block font-display text-xl font-semibold ${light ? 'text-white' : 'text-forest-900'}`}>{site.shortName}</span>
-        <span className={`block text-[10px] font-semibold uppercase tracking-[0.25em] ${light ? 'text-gold-400' : 'text-gold-600'}`}>Housing Agency</span>
+        <span className="block font-sans text-[22px] font-extrabold tracking-wide">
+          <span style={{ color: BRAND.orange }}>R</span>
+          <span style={light ? { color: '#fff' } : { color: BRAND.maroon }}>IRI</span>
+        </span>
+        <span className="mt-0.5 block text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: light ? 'rgb(255 255 255 / .8)' : BRAND.blue }}>Housing Agency</span>
       </span>
     </Link>
   )

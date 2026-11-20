@@ -51,6 +51,8 @@ export async function handleChat(request, env = process.env) {
 
   if (!upstream?.ok || !upstream.body) {
     const status = upstream?.status
+    // Shows up in Vercel → Logs, e.g. an invalid model ID or an exhausted free quota
+    console.error('[api/chat] OpenRouter error', status, await upstream?.text().catch(() => ''))
     const error = status === 429
       ? 'The assistant is getting a lot of questions right now. Please try again in a minute, or call/WhatsApp us.'
       : 'The assistant is unavailable right now. Please call or WhatsApp us.'
